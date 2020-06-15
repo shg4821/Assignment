@@ -1,0 +1,69 @@
+<html>
+    <head>
+        <!-- 반응형 처리 -->
+        <meta charset="UTF-8" />
+        <!-- initial-scale=1 : 브라우저 넓이 -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            * {box-sizing: border-box;}
+            header {background-color: snow; padding: 20px;text-align: center;
+            font-size: 30px; color: midnightblue;}
+            nav {float: left; width: 25%; height: 500px; 
+            background: rgb(170, 210, 255); padding: 0px;}
+            nav ul {list-style-type: none; margin: 0; padding: 0; overflow: hidden;
+            background-color: rgb(170, 210, 255);}
+            nav li {float: left; width: 100%;}
+            nav li a {display: block; color: midnightblue; text-align: center;
+            padding: 20px; text-decoration: none;}
+            nav li a:hover {background-color: rgb(36, 131, 255); color: snow;}
+            article {float: left; padding: 20px; width: 75%;
+            background-color: #f1f1f1; height: 500px;}
+            footer {text-align: center; font-size: 12px; padding: 20px; 
+            background-color: snow;}
+            /* 반응형 설정 */
+            @media (max-width: 600px) {nav, article { width: 100%; height: auto;}}
+            section:after { content: "&nbsp;"; display: table; clear:both; }
+            </style>
+    </head>
+    <body>
+        <!-- 헤더 -->
+        <header>
+            <h1>MOVIES</h1>
+            
+        </header>
+        <!-- 컨텐츠 -->
+        <section>
+            <!-- 내비 -->
+            <nav>
+                <ul>
+                    <li style="text-align: center; color: black; padding: 20px; 
+                    font-size: 25px;">
+                        <b>Category</b></li>
+                    <li><a href="#fr"><b>MOVIE 01</b></a></li>
+                    <li><a href=""><b>MOVIE 02</b></a></li>
+                    <li><a href=""><b>MOVIE 03</b></a></li>
+                </ul>
+            </nav>
+            <article id="fr">
+                <h2>MOVIE 01</h2>
+                <img src="../movies/imgs/fr.jpg" title="겨울왕국 2"
+                style="width: 110px; float: left; margin-right: 10;">
+                <p><b style="font-size: 30;">「겨울왕국Ⅱ」</b><br><br><br><br>
+                    <b style="font-size: 20;">
+                    내 마법의 힘은 어디서 왔을까?<br>
+                    나를 부르는 저 목소리는 누구지?</b><br><br>
+                    </p>
+                <p>어느 날 부턴가 의문의 목소리가 엘사를 부르고, 평화로운 아렌델 왕국을 위협한다.<br>
+                    트롤은 모든 것은 과거에서 시작되었음을 알려주며 엘사의 힘의 비밀과 진실을 찾아 떠나야한다고 조언한다.<br>
+                    위험에 빠진 아렌델 왕국을 구해야만 하는 엘사와 안나는 숨겨진 과거의 진실을 찾아<br>
+                    크리스토프, 올라프 그리고 스벤과 함께 위험천만한 놀라운 모험을 떠나게 된다.<br>
+                    자신의 힘을 두려워했던 엘사는 이제 이 모험을 헤쳐나가기에 자신의 힘이 충분하다고 믿어야만 하는데…
+                    두려움을 깨고 새로운 운명을 만나다!</p>
+            </article>
+        </section>
+        <!-- 카피라이트 -->
+        <footer>
+            <p>Copyrightⓒ 2020 HG. All Rights Reserved.</p>
+        </footer>
+    </body>
+</html>

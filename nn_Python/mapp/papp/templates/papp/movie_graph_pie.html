@@ -1,0 +1,166 @@
+{% extends "papp/layout.html" %}
+{% block content  %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+<form name="frmSearch" method="GET" action="lgProces">
+  <!-- 1. 분류제목 -->
+  <div class="row p-1">
+    <div class="col-sm-12 text-center">
+      <h2 for="m_title">영화 장르별 검색</h2>
+    </div>
+  </div>
+  <!--2. 분류제목 -->
+  <div class="form-group row p-1">
+    <div class="col-sm-2 text-right"></div>
+    <div class="col-sm-2 text-right">
+      <select class="form-control" id="sClass" name="sClass" style="width: 150px;">
+        <option value="#">장르선택</option>
+        <option value="드라마">드라마</option>
+        <option value="판타지">판타지</option>
+        <option value="서부">서부</option>
+        <option value="로맨스">로맨스</option>
+        <option value="모험">모험</option>
+        <option value="스릴러">스릴러</option>
+        <option value="느와르">느와르</option>
+        <option value="컬트">컬트</option>
+        <option value="다큐멘터리">다큐멘터리</option>
+        <option value="코미디">코미디</option>
+        <option value="가족">가족</option>
+        <option value="미스터리">미스터리</option>
+        <option value="전쟁">전쟁</option>
+        <option value="애니메이션">애니메이션</option>
+        <option value="범죄">범죄</option>
+        <option value="뮤지컬">뮤지컬</option>
+        <option value="SF">SF</option>
+        <option value="액션">액션</option>
+        <option value="무협">무협</option>
+        <option value="에로">에로</option>
+        <option value="서스펜스">서스펜스</option>
+        <option value="서사">서사</option>
+        <option value="블랙코미디">블랙코미디</option>
+        <option value="실험">실험</option>
+        <option value="영화카툰">영화카툰</option>
+        <option value="영화음악">영화음악</option>
+        <option value="영화패러디포스터">영화패러디포스터</option>
+      </select>
+    </div>
+    <div class="col-sm-2 text-right">
+      <select class="form-control" id="selChart" name="selChart" style="width: 150px;">
+        <option value="bar">바차트</option>
+        <option value="line">라인차트</option>
+        <option value="radar">레이다</option>
+        <option value="pie">파이차트</option>
+        <option value="polarArea">폴라에어리어</option>
+        <option value="doughnut">도넛</option>
+      </select>
+    </div>
+    <div class="col-sm-4 text-left"><input required="required" type="text" class="form-control" id="txColname"
+        name="txColname" placeholder="데이터가 저장될 컬레션이름을 써주세요" name="txColname">
+    </div>
+    <div class="col-sm-2 text-left"><button type="button" class="btn btn-primary"
+        onclick="doAjax(this.form,'sClass', 'txColname')">검색</button>
+    </div>
+  </div>
+</form>
+<div class="row p-1 text-center">
+  <div class="col-sm-12 text-center">
+    <br />
+    <h3>- 조회목록 - </h3>
+    <table class="table table-striped ">
+      <thead>
+        <tr>
+          <th>순위</th>
+          <th>제목 키워드</th>
+          <th>빈도수</th>
+        </tr>
+      </thead>
+      <tbody id="tbos">
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="row p-1 text-center">
+  <div class="col-sm-12">
+    <!-- 파이그래프 시작 -->
+    <tbody id="tbos2">
+      <tr>
+        <td>
+          <div id="chartid" style="width: 100%; text-align: center; ">
+            <canvas id="pie-chart"></canvas>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+
+    <!-- 파이그래프 끝 -->
+  </div>
+</div>
+<script>
+  // 셀렉트 선택시 kClass변수에 드롭다운값을 할당
+  mClass_v = null;
+
+  // 검색버튼을 누루면 내용을 서버에 전송
+  function doAjax(mFrm, mClass, txColname) {
+    alert($('#sClass').val());
+    alert($('#txColname').val());
+
+    $.ajax({
+      url: "http://192.168.0.55:8000/papp/movie2/",
+      type: "GET",
+      data: {
+        'sClass': $('#sClass').val(),
+        'txColname': $('#txColname').val(),
+      },
+      dataType: 'json',
+      contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+      dataType: "text",
+
+      success: function (data) {
+        // 데이터 청결화
+        for (i = 0; i < 10; i++) {
+          data = data.replace("[", '').replace("[", '').replace("]", '').replace("]", '')
+        }
+        data = data.split(',');
+        tbos = $("#tbos");
+        $("#tbos tr").remove();
+        j = 1;
+        alert(tbos)
+
+        // 그래프
+        labels_ = []   // 라벨
+        data_ = []   // 값
+        j = 0
+        for (i = 0; i < data.length; i = i + 2) {
+          labels_[j] = data[i];
+          data_[j] = data[i + 1];
+          tbos.append("<tr><td>" + (j + 1) + "</td><td>" + data[i] + "</td><td>" + data[i + 1] + "</td></tr>");
+          j++;
+          // alert(data[i]);alert(data[i+1]);
+        }
+
+        // alert(labels_.length);
+        // 그래프 설정
+        var config = {
+          type: $("#selChart").val(),
+          data: {
+            datasets: [{
+              data: data_,
+              backgroundColor: [
+                '#fc4f6f', '#ffd500', '#95ffaa', '#54f7f0', '#e399ff', '#ffc6c8', '#f1cbff', '#72ff9e', '#fff584', '#7df4f2'
+              ],
+              label: "검색결과"
+            }],
+            labels: labels_
+          },
+          options: {
+            responsive: true
+          }
+        };
+        // 
+        var ctx = document.getElementById('pie-chart').getContext('2d');
+        // ctx=차트출력, config=차트설정
+        new Chart(ctx, config).update();
+      }
+    });
+  }
+</script>
+{% endblock %}

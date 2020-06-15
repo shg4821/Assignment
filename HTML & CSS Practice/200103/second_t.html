@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <style>
+            /* 헤더 */
+            header {background-color: whitesmoke; padding: 30px;text-align: center;
+            font-size: 30px; color: midnightblue; height: 50px;}
+            /* 내비 */
+            nav {float: left; width: 15%; padding: 0px;}
+            nav ul {list-style-type: none; margin: 0; padding: 0; overflow: hidden;
+            }
+            nav li {float: left; width: 100%;}
+            nav li a {display: block; color: midnightblue; 
+            padding: 20px; text-decoration: none;}
+            nav li a:hover {background-color: midnightblue; color: snow;}
+            /* 아티클 */
+            article {padding: 20px; width: 85%;}
+            /* 저작권 */
+            footer {text-align: center; font-size: 12px; color: gray; padding: 20px;}
+            section:after { content: ""; display: table; 
+            clear:both; }
+            /* 반응형 */
+            @media only screen and (max-width:620px) 
+            { header, nav, article, footer { width:100%; text-align: center;} }
+        </style>
+    </head>
+    <body>
+        <header><b>2020.01.03</b></header>
+        <nav>
+            <ul>
+                <li>
+                    <p style="font-size: 20px; padding: 5px; text-align: unset; 
+                        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                    <img src="s_img/category.png" style="width: 20px; height: 20px;
+                        float: left; padding: 5px;">
+                    <b>Category</b></p>
+                </li>
+                <li><a href="#01"><b>01</b></a></li>
+                <li><a href="#02"><b>02</b></a></li>
+                <li><a href="#03"><b>03</b></a></li>
+                <li><a href="#04"><b>04</b></a></li>
+            </ul>
+        </nav>
+        <article id="01">1qqqqqq</article>
+        <article id="02"></article>
+        <article id="03"></article>
+        <article id="04"></article>
+        <a style="display:scroll;position:fixed;bottom:10px;right:10px;" href="#" 
+        title="맨위로"><img src="s_img/top.png" width="50px"></a>
+        
+        <footer>Copyright&copy; 2020 HG. All Rights Reserved.</footer >
+    </body>
+</html>

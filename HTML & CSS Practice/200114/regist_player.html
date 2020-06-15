@@ -1,0 +1,220 @@
+<html>
+    <head>
+        <title>일반회원 가입</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <!-- 페이지 공통 CSS -->
+        <link rel="stylesheet" href="css/global.css">
+        <!-- 폼태그 전용 CSS-->
+        <link rel="stylesheet" href="css/form.css">
+        <style>
+            h2 { font-size: 30px; padding: 15px;}
+        </style>
+    </head>
+    <body>
+        <!-- 헤더 -->
+        <header>
+            <div class="topper">
+                <a href="DSB_Info.html" >
+                    팬 페이지로 이동</a>
+                <audio controls style="border-radius: 2px; ">
+                    <source src="media/강혜원 - 처음 널 보고_1.mp3" type="audio/mp3">
+                </audio>
+            </div>
+            <div class="title">
+                <a href="main_Home.html" id="homelogo">
+                    <img src="img/logo1.png" alt="Home" title="home">
+                </a>
+            </div>
+        </header>
+        <nav class="pageNav">
+            <ul>
+                <li><a href="main_Home.html"><b>Home</b></a></li>
+                <li class="register">
+                    <a href="javascript:void(0)" class="re_a"><b>Regist</b></a>
+                    <ul class="regist_list">
+                        <li><a href="regist_player.html"><b>Player</b></a></li>
+                        <li><a href="regist_member.html"><b>Member</b></a></li>
+                    </ul>
+                </li>
+                <li><a href="player_list.html"><b>Player</b></a></li>
+                <li><a href="member_list.html"><b>Member</b></a></li>
+                <li><a href="https://www.doosanbears.com/media/notice/1"><b>Board</b></a></li>
+                <li><a href="DSB_Info.html"><b>Fan</b></a></li>
+                <a href="#" style="float: right;" id="logInL">로그인</a>
+            </ul>
+        </nav>
+        <main class="reMain">
+            <section class="res01">
+                <h1 style="text-align: center; font-size: 33px;">- 선수등록 -</h1>
+                <fieldset style="padding: 10px 0 10px 10px;">
+                    <legend><b>필수정보 입력</b></legend>
+                    <table>
+                        <form action="">
+                            <tr>
+                                <th class="t01">아이디</th>
+                                <td>
+                                    <input type="text" name="uid" required="required"
+                                    placeholder="영문 또는 숫자 8~12자">
+                                    <input type="button" value="중복 확인" 
+                                    onclick="alert('사용 가능한 아이디입니다')"><br>
+                                    &nbsp;* 8~12자의 영문 소문자, 숫자만 사용할 수 있습니다.
+                                    
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="t01">비밀번호</th>
+                                <td>
+                                    <input type="password" name="pwd" id="pwd1"
+                                    placeholder="영문 또는 숫자 8자 이상">
+                                    &nbsp;* 영문/숫자를 조합하여 8자 이상 입력
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="t01">비밀번호 확인</th>
+                                <td>
+                                    <input type="password" name="pwd" id="pwd2">
+                                    &nbsp;* 비밀번호를 한번 더 입력해주세요.
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="t01">성명</th>
+                                <td>
+                                    <input type="text" name="name" id="uName"
+                                    style="width: 100px;">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="t01">선수코드</th>
+                                <td>
+                                    <input type="text" name="name" id="uName" pattern="[0-9]{8}"
+                                    style="width: 150;" placeholder="8자리 숫자 입력">
+                                    <input type="button" value="확인" style="height: 30;"
+                                    onclick="alert('인증되었습니다.')"><br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="t01">생년월일</th>
+                                <td><input type="date" name="bDay" id="uBd" style="width: 150;"
+                                    max="2019-12-31" min="1900-01-01">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="t01">입단일자</th>
+                                <td><input type="date" name="bDay" id="uBd" style="width: 150;"
+                                    min="1982-01-01">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="t01">휴대전화</th>
+                                <td><input type="radio" name="tc" value="kt">KT
+                                    <input type="radio" name="tc" value="skt" checked>SKT
+                                    <input type="radio" name="tc" value="lg" checked>LG U+ <br>
+                                    <select name="cn1" id="uCn">
+                                        <option value="0">선택</option>
+                                        <option value="1">010</option>
+                                        <option value="2">011</option>
+                                        <option value="3">016</option>
+                                        <option value="4">017</option>
+                                        <option value="5">018</option>
+                                        <option value="6">019</option>
+                                    </select> -
+                                    <input type="tel" name="cn2" id="uCn" pattern="[0-9]{3,4}"> -
+                                    <input type="tel" name="cn3" id="uCn" pattern="[0-9]{4}">
+                                    <p style="padding: 2;">
+                                        * 선수정보에 기재된 연락처와 동일해야 합니다</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="t01">이메일</th>
+                                <td>
+                                    <input type="email" name="ma" id="uMail"
+                                    placeholder="예) abc123@xyz.com"><br>
+                                    <p style="padding: 2;">
+                                        * 선수정보에 기재된 이메일과 동일해야 합니다</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="t01" rowspan="2">주소</th>
+                                <td><p><b>우편번호</b></p>
+                                    <input type="text" name="uPost1" id="uPost" pattern="[0-9]{3}"                         
+                                        required="required" style="width: 70px; height: 25px;">
+                                        - <input type="text" name="post1" id="uPost" pattern="[0-9]{3}"                         
+                                        required="required" style="width: 70px; height: 25px;">
+                                        <a href="#" onclick="window.open('https://www.epost.go.kr/search.RetrieveIntegrationNewZipCdList.comm', 'adS',
+                                        'width=500px, height=500px')"><input type="button" value="검색" ></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><p><b>상세주소</b></p>
+                                    <input type="text" name="post2" placeholder="시/군/구"
+                                        required="required" style="width: 200;"><br>
+                                    <input type="text" name="post3" required="required"
+                                        placeholder="읍/면/동 이하까지 입력" style="width: 200;">
+                                    <p style="padding: 2;">
+                                        * 선수정보에 기재된 주소와 동일해야 합니다</p>
+                                </td>
+                            </tr>
+                        </form>
+                    </table>
+                </fieldset>
+            </section>
+            <section class="res02">
+                <fieldset style="padding: 10px 0 10px 10px;">
+                    <legend><b>선택정보 입력</b></legend>
+                    <table>
+                        <tr>
+                            <th class="t01">과거 등록여부</th>
+                            <td>
+                                <input type="radio" name="vm1" id="vipMem">등록
+                                <input type="radio" name="vm2" id="vipMem" checked>미등록
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="t01">한 마디</th>
+                            <td><textarea name="intro" id="uInt" cols="50" rows="5">
+                            </textarea></td>
+                        </tr>
+                    </table>
+                </fieldset>
+            </section>
+            <section class="res03">
+                <fieldset style="padding: 10px 0 10px 10px;">
+                    <legend><b>가입약관</b></legend>
+                    <iframe src="forms/clause_t.html" style="width: 80%; height: 150px;"></iframe><br>
+                    <p>&nbsp;<input type="checkbox" name="clause" id="uCl"> 이용 약관에 동의합니다. </p>
+                </fieldset>
+            </section>
+            <section class="res04">
+                <table class="finBtn" >
+                    <tr>
+                        <td><button type="reset" onclick="alert('작성내용 초기화 !')">초기화</button></td>
+                        <td><button onclick="alert('로그인 실행!')">회원가입 완료</button></td>
+                    </tr>
+                </table>
+            </section>
+        </main>
+        <footer class="cpr">
+            <svg width="100%" height="100px">
+                <!-- 그라디언트 -->
+                <defs>
+                    <linearGradient id=liFoot x1="0%" y1="0%" x2="0%" y2="100%" >
+                        <stop offset="0%" style="stop-color: #fff; 
+                        stop-opacity: 1;"></stop>
+                        <stop offset="100%" style="stop-color: #EAEAEA; 
+                        stop-opacity: 1;"></stop>
+                    </linearGradient>
+                </defs>
+                <!-- 도형 -->
+                <rect width="100%" height="100px" style="fill: url(#liFoot);"></rect>
+                <!-- 텍스트 -->
+                <text alignment-baseline="central" fill="black"  x="42%" y=50%
+                style="font-weight: border; text-shadow: #fff -1px 1px;
+                font-size: 11px;" >
+                Copyrightⓒ HG With 2019 Doosan Bears Inc. All Rights Reserved.</text>
+            </svg>
+        </footer>
+        <a style="display:scroll;position:fixed;bottom:10px;right:10px;" href="#" 
+        title="맨위로"><img src="img/cw_top.png" width="50px"></a>
+    </body>
+</html>

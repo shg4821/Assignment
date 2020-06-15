@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <style>
+            /* 링크의 색상 변경 */
+            .aA:link, .aA:visited {color: gray;}
+            /* 링크의 밑줄 제거 */
+            .aB:link, .aB:visited {color: rgb(0, 0, 100); text-decoration: none;}
+            /* 링크의 마우스 오버/클릭 : 밑줄 긋기/색상 변경 */
+            .aC:link, .aC:visited {color: rgb(0, 0, 100); text-decoration: none;}
+            .aC:hover, .aC:active {color: rgb(0, 231, 135); text-decoration: underline;}
+        </style>
+    </head>
+    <body>
+        <h1>링크스타일</h1>
+        <ul>
+            <!--
+                클릭 : 복합 이벤트 
+                마우스가 링크 위에 있을 때 : mouse-over 
+                마우스를 누를 때 : mouse-down, active
+                마우스를 누른 후 뗄 때 : mouse-up
+
+            -->
+            <li><a class="aA" href="https://www.naver.com/" target="_blank">NAVER</a></li>
+            <li><a class="aB" href="https://www.daum.net/" target="_blank">DAUM</a></li>
+            <li><a class="aC" href="https://www.google.co.kr/" target="_blank">Google</a></li>
+        </ul>
+
+    </body>
+</html>

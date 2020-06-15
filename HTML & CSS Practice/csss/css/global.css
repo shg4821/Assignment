@@ -1,0 +1,22 @@
+/* 공통 */
+* { box-sizing: border-box; margin: 0px; font-size: 12px; }
+h2 { font-size: 17px; padding: 10px;}
+
+/* 내비 */
+.nv_top { overflow: hidden; background-color: #f56217; margin-top: 5px; }
+.nv_top a { float: left; display: block; color: white; text-align: center;
+    padding: 14px 16px; text-decoration: none ; }
+.nv_top a:hover {background-color: #0b486b;}
+/* 컨텐츠 */
+.secCon { float: left; width: 80%; padding: 0 20; border-left: thin dotted #243b55;
+    border-right: thin dotted #243b55; }
+/* 배너 */
+.secBan { background-color: mintcream; float: left ; width: 20%; padding: 15;
+margin-top: 7; text-align: center; }
+.secBan p { margin: 10; }
+/* 저작권 */
+
+/* 반응형 */
+@media only screen and (max-width:620px) {
+    .banner, .secCon, .secBan {width: 100%;}
+}

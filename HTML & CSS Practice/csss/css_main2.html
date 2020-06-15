@@ -1,0 +1,281 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <!-- 페이지 공통 CSS -->
+        <link rel="stylesheet" href="css/global.css">
+        <!-- 폼태그 전용 CSS-->
+        <link rel="stylesheet" href="css/form.css">
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <!-- 헤더 -->
+        <header>
+            <svg width="100%" height="100px">
+                <!-- 그라디언트 -->
+                <defs>
+                    <linearGradient id=liTitle x1="100%" y1="0%" x2="0%" y2="100%" >
+                        <stop offset="40%" style="stop-color: #021729; 
+                        stop-opacity: 1;"></stop>
+                        <stop offset="100%" style="stop-color: #d65a12; 
+                        stop-opacity: 1;"></stop>
+                    </linearGradient>
+                </defs>
+                <!-- 도형 -->
+                <rect width="100%" height="100%" style="fill: url(#liTitle);"></rect>
+                <!-- 텍스트 -->
+                <text alignment-baseline="central" fill="white" 
+                style="font-weight: border; font-size: 45px; text-shadow: black -2px 1px;"
+                x="5%" y=45% >HG</text>
+                <text alignment-baseline="central" fill="snow" 
+                style="font-weight: border; font-size: 15px; text-shadow: rgb(255, 170, 32) -1px 1px;"
+                x="35%" y=20% >내가 어두운 밤이 되면 별이 되어 줘 네가 반짝반짝 빛나는 별이 돼 줄래?
+                모두들 잠드는 침묵의 밤 너머에 네가 내 친구가 되어 줘</text>
+            </svg>
+        </header>
+        <!-- overflow: auto; -->
+        <main style="overflow: auto;">
+            <!-- 내비 -->
+            <nav class="nv_top">
+                <a href="#">Home</a>
+                <a href="#">Register</a>
+                <a href="#">List</a>
+                <a href="#">Contact</a>
+                <a href="#">Board</a>
+            </nav>
+
+            <!-- 컨텐츠 -->
+            <section class="secCon">
+                <h2>🎈 슈도클래스 2 ) 내장함수 <br>
+                    - q태그 : 앞뒤로 큰따옴표 추가 <br>
+                    ex) q:lang(매개변수 값) => 매개변수 값에 정의한 문장이 태그 앞뒤로 추가</h2>
+                <style>
+                    q:lang(e3) { quotes: '\00AB' '\00BB' '\201E' '\201C'; color: tomato;
+                        font-size: x-large; }
+                    q:lang(headTag) { quotes: "<head>" "</head>"; color: midnightblue; 
+                        font-style: bold; font-size: large;}
+                </style>
+                <article>
+                    <p><q lang="headTag">밤과 별의 노래</q>온유 & 이진아</p>
+                    <p>마음이 <q>어두워서 잠드는 게 어려워져</q> <br>
+                    복잡한 세상들이 부지런히 괴롭혀<br></p>
+                        
+                    <p>창밖에 햇살이 내 얼굴 가득 덮어도
+                    <q lang="e3">눈을 뜨는 일이 싫은 걸</q>
+                    이제 널 볼 수가 없는 <q lang="e3">이 현실이
+                    다시 바뀔 수 있다면</q></p>
+                        
+                    <p><q>내가 어두운 밤이 되면 별이 되어 줘
+                    네가 반짝반짝 빛나는 별이 돼 줄래?</q> 
+                    모두들 잠드는 침묵의 밤 너머에
+                    네가 내 친구가 되어 줘
+                    친구가 되어 줘</p>
+                </article>
+                <h2>🎈 슈도클래스 1 ) fist-child : 첫번째 자식 <br>
+                    ex) p:firstchild => 같은 레벨의 p태그 중 첫번째</h2>
+                <style>
+                    p:first-child b { font-size: xx-large; color: coral; }
+                    p:nth-child(2) b {font-size: large; color: tomato;}
+                    p:last-child b { font-size: xx-large; color: mediumseagreen; }
+                </style>
+                <article>
+                    <p>마음이 <b>어두워서 잠드는 게 어려워져</b> <br>
+                    복잡한 세상들이 부지런히 괴롭혀<br></p>
+                        
+                    <p>창밖에 햇살이 내 얼굴 가득 덮어도
+                    <b>눈을 뜨는 일이 싫은 걸</b>
+                    이제 널 볼 수가 없는 이 현실이
+                    다시 바뀔 수 있다면</p>
+                        
+                    <p><b>내가 어두운 밤이 되면 별이 되어 줘
+                    네가 반짝반짝 빛나는 별이 돼 줄래?</b> 
+                    모두들 잠드는 침묵의 밤 너머에
+                    네가 내 친구가 되어 줘
+                    친구가 되어 줘</p>
+                </article>
+                <h2>🎈 다수의 이미지를 한 행에 배치</h2>
+                <style>
+                .artImgClear figure { float: left; width: 25%; padding: 5px; }
+                .artImgClear::after { content: ""; clear: both ; display: table; }
+                </style>
+                <article class="artImgClear">
+                    <figure><img src="img/sky.jpg" alt="sky" 
+                        style="width: 100%;"></figure>
+                    <figure><img src="img/sky.jpg" alt="sky" 
+                        style="width: 100%;"></figure>
+                    <figure><img src="img/sky.jpg" alt="sky" 
+                        style="width: 100%;"></figure>
+                    <figure><img src="img/sky.jpg" alt="sky" 
+                        style="width: 100%;"></figure>
+                </article>
+                <h2>🎈 이미지와 컨텐츠가 블럭엘리먼트에서 위치 유지 <br>(overflow : auto)</h2>
+                <article style="overflow: auto;  line-height: 1.5;">
+                    <img src="img/sky.jpg" alt="sky" width="200" height="200"
+                    style="float: left; margin: 10px;">
+                    <p>마음이 어두워서 잠드는 게 어려워져 <br>
+                    복잡한 세상들이 부지런히 괴롭혀<br></p>
+                    
+                    <p>창밖에 햇살이 내 얼굴 가득 덮어도
+                    눈을 뜨는 일이 싫은 걸
+                    이제 널 볼 수가 없는 이 현실이
+                    다시 바뀔 수 있다면</p>
+                    
+                    <p>내가 어두운 밤이 되면 별이 되어 줘
+                    네가 반짝반짝 빛나는 별이 돼 줄래?
+                    모두들 잠드는 침묵의 밤 너머에
+                    네가 내 친구가 되어 줘
+                    친구가 되어 줘</p>
+                </article>
+                <h2>🎈이미지 위의 텍스트 위치</h2>
+                <style>
+                    .artCon {position: relative;}
+                    .tLeft { position: absolute; top: 10; left: 15; font-size: 20; }
+                    .artCon img {opacity: 0.5;}
+                    .tRight {position: absolute; top: 10; right: 15; font-size: 20;}
+                    .bLeft {position: absolute; bottom: 10; left: 15; font-size: 20;}
+                    .bRight {position: absolute; bottom: 10; right: 15; font-size: 20;}
+                    .center {position: absolute; top: 50%; left: 0; font-size: 20;
+                    text-align: center; width: 100%;}
+                </style>
+                <article class="artCon">
+                    <img src="img/namae.jpg" alt="너의 이름은" width="100%" height="auto">
+                    <div class="tLeft">TOP-LEFT</div>
+                    <div class="tRight">TOP-RIGHT</div>
+                    <div class="bLeft">BOTTOM-LEFT</div>
+                    <div class="bRight">BOTTOM-RIGHT</div>
+                    <div class="center">CENTER</div>
+                </article>
+
+                <h2>🎈 display : inline => 엘리먼트 자체 (넓이/높이 X) <br>
+                    🎈 block => 한 행을 전부 차지 (넓이/높이 O) <br>
+                    🎈 inline-block => display+block (엘리먼트 자체-넓이/높이 O)<br>
+                    🎈 none => 삭제
+                </h2>
+                <p>화면에 안보이게 하는 법 : display=none (삭제) 
+                    / visibility=hidden (숨김)</p><br>
+                <article>
+                    <!-- max-width = 최대 폭 -->
+                    <div style="max-width: 800px;">
+                        <div style="width: 30%; display: inline-block;"
+                        onclick=" this.style.display='none' ">
+                            <p>display:none</p>
+                            <img src="img/fire.png" style="width: 100%;">
+                        </div>
+                        <div style="width: 30%; display: inline-block;"
+                        onclick=" this.style.visibility='hidden' ">
+                            <p>visibility='hidden'</p>
+                            <img src="img/fire.png" style="width: 100%;">
+                        </div>
+                        <div style="width: 30%; display: inline-block;"
+                        onclick=" this.style.display='none' ">
+                            <p>display:none</p>
+                            <img src="img/fire.png" style="width: 100%;">
+                        </div>
+                    </div>
+                </article>
+                <h2>테이블 편집</h2>
+                <article>
+                    <style>
+                        table { border-collapse: collapse; width: 100%; }
+                        th, td { text-align: left; padding: 8px; }
+                        tr:nth-child(even){ background-color: #eaeaea; }
+                        th {background-color: #4a4a4a; color: white;}
+                    </style>
+                    <table id="tblTest">
+                        <tr><th>No.</th><th>Title</th><th>Date</th><th>Hits</th></tr>
+                        <tr><td>500</td><td>놀면서 돈벌기</td><td>2020.01.09</td><td>1000</td></tr>
+                        <tr><td>500</td><td>놀면서 돈벌기</td><td>2020.01.09</td><td>1000</td></tr>
+                        <tr><td>500</td><td>놀면서 돈벌기</td><td>2020.01.09</td><td>1000</td></tr>
+                        <tr><td>500</td><td>놀면서 돈벌기</td><td>2020.01.09</td><td>1000</td></tr>
+                        <tr><td>500</td><td>놀면서 돈벌기</td><td>2020.01.09</td><td>1000</td></tr>
+                        <tr><td>500</td><td>놀면서 돈벌기</td><td>2020.01.09</td><td>1000</td></tr>
+                    </table>
+                </article>
+                <h2>UL / LI 구분아이콘 이미지로🎈</h2>
+                <article>
+                    <ul style="list-style: square inside url(img/cl.png);">
+                        <li>포카리스웨트</li>
+                        <li>게토레이</li>
+                        <li>코카콜라</li>
+                    </ul>
+                </article>
+                <h2>아이콘 : 태그로 아이콘 출력</h2>
+                <link rel="stylesheet" 
+                href="https://fonts.googleapis.com/icon?family=Material+Icons">
+                <article>
+                    <i class="material-icons">cloud</i>
+                    <i class="material-icons">favorite</i>
+                    <i class="material-icons">attachment</i>
+                    <i class="material-icons">computer</i>
+                    <i class="material-icons">traffic</i>
+                </article>
+                <h2>TEXT : SHADOW</h2>
+                <article>
+                    <h1 style="font-size: 50; text-shadow: 10px 5px orangered;">
+                    LOGO TITLE</h1>
+                </article>
+            </section>
+            <!-- 광고 -->
+            <section class="secBan">
+                <h2>광고제목</h2>
+                <p>광고내용 . . .</p>
+                <h2>광고제목</h2>
+                <p>광고내용 . . .</p>
+                <h2>광고제목</h2>
+                <p>광고내용 . . .</p>
+                <h2>광고제목</h2>
+                <p>광고내용 . . .</p>
+                <!-- 이미지 -->
+                <svg width="100%" height="150px" style="background-image: url('img/namae.jpg');
+                background-size: cover;">
+                    <defs>
+                        <linearGradient id="lgSec" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:rgb(191, 112, 255);
+                            stop-opacity:0.3;" />
+                            <stop offset="100%" style="stop-color:rgb(13, 49, 73);
+                            stop-opacity:0.5;" />
+                        </linearGradient>
+                    </defs>
+                    <rect width="100%" height="100%" style="fill: url(#lgSec)">
+                    </rect>
+                </svg><br><br>
+                <svg width="100%" height="150px" style="background-image: url('img/sky.jpg');
+                background-size: cover;">
+                    <defs>
+                        <linearGradient id="lgSec3" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:rgb(255, 129, 91);
+                            stop-opacity:0.2;" />
+                            <stop offset="100%" style="stop-color:rgb(87, 188, 255);
+                            stop-opacity:0.6;" />
+                        </linearGradient>
+                    </defs>
+                    <rect width="100%" height="100%" style="fill: url(#lgSec3)">
+                    </rect>
+                </svg>
+            </section>
+        </main>
+        <!-- 푸터 -->
+        <footer>
+            <svg width="100%" height="100px">
+                <!-- 그라디언트 -->
+                <defs>
+                    <linearGradient id=liFoot x1="100%" y1="0%" x2="0%" y2="100%" >
+                        <stop offset="40%" style="stop-color: #000000; 
+                        stop-opacity: 1;"></stop>
+                        <stop offset="100%" style="stop-color: #434343; 
+                        stop-opacity: 1;"></stop>
+                    </linearGradient>
+                </defs>
+                <!-- 도형 -->
+                <rect width="100%" height="100%" style="fill: url(#liFoot);"></rect>
+                <!-- 텍스트 -->
+                <text alignment-baseline="central" fill="white"  x="42%" y=50%
+                style="font-weight: border; text-shadow: rgb(251, 255, 212) -1px 1px;
+                font-size: 11px;" >
+                Copyright&copy; 2020 HG. All Rights Reserved.</text>
+            </svg>
+        </footer>
+    </body>
+</html>

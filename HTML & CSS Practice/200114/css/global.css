@@ -1,0 +1,157 @@
+/* 공통 */
+* { box-sizing: border-box; margin: 0px; padding: 0px; font-size: 12px; 
+ border-collapse: collapse; list-style: none;}
+h1 { font-size: 24px; }
+h2 { font-size: 17px; padding: 10px;}
+legend {font-size: 26px; font-style: bold;}
+.cpr { width: 100%; text-align: center; height: 100px; }
+hr { margin: 7px 0px; color: #B2B2B2; }
+section::after { display: inline-block; clear: both;  }
+/* 레이아웃 설정 보더 */
+/* { border: dotted gray thin; } */
+/* 홈화면 헤더 */
+div.topper audio { width: 300px; height: 20px; }
+div.topper { overflow-y: hidden; }
+div.topper a { text-decoration: none; font-style: bold; padding: 2px; color: #839484;
+    font-size: 10px; text-align: center; float: right; }
+div.topper a:hover { text-decoration: underline ; }
+div.title { width: 100%; height: 150px; background-color: #131230;
+border-bottom: solid 2.5px #ED1C24; }
+#homelogo img { position: relative; left: 20px; top: 25%; width: 200px; height: auto; }
+/* 홈화면 내비 */
+.homeNav { position: -webkit-sticky; position: sticky; top: 0; height: 50px;
+    background-color: #131230; }
+.homeNav li { float: left; width: 100px; text-align: center; padding: auto; 
+    background-color: #131230; }
+.homeNav li a, .re_a { display: inline-block; color: white; text-align: center;
+    padding: 14px 16px; text-decoration: none; width: 100%; }
+.homeNav li a:hover, .register:hover .re_a { background-color: #EAEAEA; color: #ED1C24; }
+.homeNav li.register { display: inline-block; }
+.regist_list { display: none; position: absolute; background-color: #f9f9f9;
+    min-width: 160px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); z-index: 1; }
+.regist_list a { color: black; padding: 12px 16px; text-decoration: none;
+    display: block; text-align: left; }
+.regist_list a:hover { background-color: #f1f1f1; }
+.register:hover .regist_list { display: block; }
+/* 홈화면 메인 */
+.hMain { float: left; width: 80%; padding: 0 15; }
+
+/* 홈화면 섹션 1 */
+.hPro img { width: 100%; }
+
+/* 홈화면 섹션 2 */
+.hSec2 article { width: 50%; height: auto; padding: 5; border: dotted thin #EAEAEA;
+    float: left; min-height: 400px; }
+.hSec2 article h2 { background-color: #EAEAEA; }
+.hSec2 article p { font-size: 14px; padding: 5px 2px; }
+
+/* 홈화면 섹션 4 */
+.hSec4 .bList { width: 100%; }
+.hSec4 .bList div { min-height: 440px;  }
+.hSec4 .hEvent { float: left; width: 33.3%; padding: 5 15; }
+.hSec4 .hNews {width: 33.3%; padding: 5 15; }
+.hSec4 .hRank { width: 33.3%; padding: 5 15; }
+.teamRank th { height: 35px; font-size: 15px; border-bottom: solid 2px #B2B2B2;
+    background-color: #EAEAEA; }
+.teamRank td { height: 30px; text-align: center; }
+.hSec4 hr { margin: 7px 0px; }
+.bList h2 { display: inline-block; margin-right: 135px; font-size: 20px; padding: 0%; }
+.bList div { float: left; border: thin solid #EAEAEA; border-collapse: collapse; 
+    width: 100%; padding: 0;  }
+.bList li { overflow: hidden; padding: 1px; }
+.bList a { overflow: hidden; text-decoration: none; color: #585858; }
+.bList a:hover { text-decoration: underline #585858; }
+.bList span { font-size: 10px; color: #585858; float: right; }
+/* 홈화면 배너 */
+.sideBar { background-color: mintcream; width: 20%; padding: 15; float: left;
+    margin-top: 7; text-align: center; }
+.sideBar .logIn > div { width: 100%; float: left; }
+.sideBar .logIn { background-color: whitesmoke; padding: 5px;border-radius: 3px; }
+.logIn li { width: 100%; }
+.hBanner p { margin: 10; }
+.hBanner div { float: left; width: 50%; }
+.hBanner div h2 { padding: 5px; text-decoration: underline #131230; color: #131230; }
+.hBanner div h2:hover { color: #ED1C24; text-decoration: underline #ED1C24 }
+.hBanner img { width: 100%; height: auto; }
+.hBanner a { text-decoration: none; color: #585858; }
+
+/* 페이지 내비 */ 
+.pageNav { position: -webkit-sticky; position: sticky; top: 0; float: left; 
+    overflow: hidden; background-color: #131230; margin-top: 5px; width: 10%; }
+.pageNav li { display: block; color: white; text-align: center;
+    text-decoration: none; width: 100%; }
+.pageNav a:hover {background-color: #EAEAEA; color: #ED1C24;}
+.pageNav li a, .re_a { display: inline-block; color: white; text-align: center;
+    padding: 14px 16px; text-decoration: none; width: 100%; }
+.pageNav li a:hover, .register:hover .re_a { background-color: #EAEAEA; color: #ED1C24; }
+.pageNav li.register { display: inline-block; }
+.pageNav .regist_list { display: none; position: relative; background-color: #f9f9f9;
+    color: #131230; width: 100%; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); }
+.pageNav .regist_list a { color: black; padding: 12px 16px; text-decoration: none;
+    display: block; text-align: left; }
+.pageNav .regist_list a:hover { background-color: #f1f1f1; color: #131230; }
+.pageNav .register:hover .regist_list { display: block; }
+#logInL { background-color: #131230; padding: 5 3 5 0; height: 30; 
+    text-decoration: none; color: whitesmoke; }
+
+/* 페이지 메인 */
+.pl_main > .pl_li, .mem_main > .mem_info {width: 100%; padding: 0 30; 
+    border-right: thin dotted #243b55; }
+.pl_main, .mem_main  { width: 70%;  float: left; }
+.pBanner { width: 20%; }
+/* 목록페이지 테이블 */
+.pl_li table { border-collapse: collapse; width: 100%; }
+.pl_li th, .pl_li td { text-align: center; padding: 8px; }
+.pl_li th { border-top: black 3px solid; border-bottom: solid 1px black;
+    background-color: #131230; color: white; font-size: 14px; 
+    text-shadow: #ED1C24 0px 0px; padding: 10px 0px;}
+.pl_li tr:nth-child(even){ background-color: #eaeaea; }
+#pageList { width: auto; text-align: center; margin: auto; }
+#pageList a { padding: 0px; margin: 0px; text-align: center; width: 10px;
+    text-decoration: none; color: black; }
+
+/* 페이지 배너 */ 
+.pBanner { background-color: mintcream; width: 20%; padding: 15; float: left;
+    margin-top: 7; text-align: center; }
+.pBanner p { margin: 5; }
+.pBanner h2 { font-size: 17px; }
+.pBanner div { float: left; width: 50%; }
+.pBanner div h2 { padding: 5px; text-decoration: underline #131230; color: #131230; }
+.pBanner div h2:hover { color: #ED1C24; text-decoration: underline #ED1C24 }
+
+/* 등록페이지 메인 */
+
+.reMain, .mem_main { float: left; width: 70%; }
+.reMain > section > fieldset, .mem_main > section > fieldset
+     { margin: auto; min-width: 70%; max-width: 70%; }
+.mem_main > section > fieldset { margin: 10 30; }
+
+/* 일반회원 페이지 테이블 */
+.reMain, .mem_main { padding: 10px; }
+.reMain table, .reMain form, .mem_info table {padding: 0px; width: 100%; margin: 0; font-size: 1em;}
+.reMain table tr, .mem_main table tr { height: 7px; }
+.reMain table td, .mem_main table td { align-items: center; padding: 3px; margin: 0px; }
+.reMain th, .mem_main th { width: 120px; padding: 5 0 5 5 ; background-color: rgb(221, 221, 221);
+    text-align: left; font-size: 12px;}
+.reMain legend, .mem_info legend { font-size: 14px; font-style: bold; }
+
+/* 회원정보 페이지 */
+.mem_main p { font-size: 14px; padding: 5;}
+.mem_main > .mem_info { max-width: 80%; margin: auto;}
+
+
+
+
+/* 반응형 */
+@media only screen and (max-width:620px) {
+    .header, .hMain, footer, .homeNav, .pageNav, .hBanner, .hSec2 article, 
+    .hSec4 .bList div, .sideBar, .rBanner, .reMain, .pl_main,
+    .pBanner, .mem_main
+    {width: 100%; float: none;}
+    .pBanner > div { width: 25%; }
+    .snsBan > div { width: 25%; height: auto;}
+    .pageNav, .homeNav { position: relative; }
+    .hBanner div { float: left; width: 25%; }
+    .homeNav li { width: 100%; }
+    
+}

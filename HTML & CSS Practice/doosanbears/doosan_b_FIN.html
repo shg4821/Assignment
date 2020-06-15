@@ -1,0 +1,231 @@
+<!--
+    CSS 코딩 위치
+    inline : 태그에 설정 ( style = )
+    internal : html에 설정 ( java : 무명클래스, * {} )
+    external : 외부파일에 설정 ( .css )
+-->
+<html>
+    <head>
+        <!-- 1. 외부 css와 연결 -->
+        <link rel="stylesheet" type="text/css" href="global.css"/>
+        <style>
+            ul {list-style-type: none;}
+            * {margin: 0px; padding: 0px;}
+            
+            /* 
+            * { border : red dotted thin;} 
+            */
+            /* CSS 정의 형식
+            태그이름 { 속성 이름 : 값; ... }
+            */
+            table {margin: 0px; padding: 0px;}
+            .sheet {height: 365px;}
+            img {width: 500px;}
+            /* 정의 시 스페이스바는 자손 */
+            table td {padding: 10px;}
+            /* 내비 */
+            .rNav td { background-color: #EAEAEA; }
+            /* 컨텐츠 */ 
+            .rCon td { background-color: whitesmoke; width: 250px; padding: 0px; 
+                margin: 0px; border-collapse: collapse;}
+            /* 카피라이트 */
+            .rRight td {background-color: #EAEAEA; padding: 0px; margin: 0px;}
+            .nav { list-style-type: none; margin: 0; padding: 0; width: 1258px; 
+                overflow: hidden; background-color: #EAEAEA; text-align: center; 
+                border-collapse: collapse;}
+            .nav td {padding: 0px;}
+            .nav td a { display: block; color: #2e2e2e; text-align: center;
+                padding: 10px; margin: 0px; text-decoration: none; }
+            .nav td a:hover { background-color: #20155e; color: #EAEAEA; }
+            .rTraf { clear: both; clear: both; display: table; width: 100%; border-collapse: separate;
+                 border-spacing: 0; border-top: 3px solid #4a4a4a; margin-bottom: 20px;} 
+        </style>
+        <title>구장 안내</title>
+    </head>
+    <body>
+        <!-- 테이블 정의 
+        &npsp; = 공백
+        -->
+        <h1 style="background-color: #130c38; color: white; text-align: center; 
+        padding: 20px;"><img src="pic/c_logo.png" style="height: 40px; width: 45px; 
+        float: inline-end; margin-right: 10;" >구장 안내</h1>
+        <table class="nav">
+            <tr class="nav">
+            <td><a href="#home"><b>Home</b></a></td>
+            <td><a href="#news"><b>Ground</b></a></td>
+            <td><a href="#contact"><b>Players</b></a></td>
+            <td><a href="#about"><b>About</b></a></td>
+            </tr>
+            </b>
+        </table>
+
+        <table>
+            <!-- 컨텐츠 -->
+            <tr class="rCon" rowspan="2">
+                <td><img src="pic/ground2.jpg" title="잠실구장 배치도"></td>
+                <td>
+                    <ul class="sheet">
+                        <li><b>1. 전광판</b>
+                            <ul>
+                                <li>경기기록용 3색 전광판<br>(14,080mm X 7.040mm)</li>
+                                <li>영상표출용 풀컬러 비디오 전광판<br>(14,784mm X 9.856mm)</li>
+                                <li>&nbsp;<br>&nbsp;</li>
+                                <li>&nbsp;</li>
+                                <li>&nbsp;</li>
+                            </ul>
+                        </li>
+                        <li><b>4. 펜스거리 및 높이</b>
+                            <ul>
+                                <li>좌측펜스 : 100m                                </li>
+                                <li>우측펜스 : 100m</li>
+                                <li>중앙펜스 : 125m</li>
+                                <li>외야펜스 총 높이 : 2m 60cm</li>
+                                <li>내야그물망 높이 : 3m</li>
+                                <li>&nbsp;</li>
+                                <li>&nbsp;</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </td>
+                <td>
+                    <ul class="sheet">
+                        <li><b>2. 잔디가 없는 부분</b>
+                            <ul>
+                                <li>투수마운드 : 직경 8m 60cm</li>
+                                <li>웨이팅서클 : 직경 6m 50cm</li>
+                                <li>1.3루 파울선 : 폭 1m 40cm</li>
+                                <li>코치박스 : 길이 6m X 폭 3m</li>
+                                <li>내야 : 14m 80cm <br> (유격수, 2루수 지역)</li>
+                                <li>12m 80cm (2루 베이스 뒤)</li>
+                            </ul><br>
+                        </li>
+                        <li><b>5. 조명탑</b>
+                            <ul>
+                                <li>외야 전광판 좌우측 1개씩</li>
+                                <li>좌우 파울선상 1개씩</li>
+                                <li>본부상단 2개</li>
+                                <li>&nbsp;</li>
+                                <li>&nbsp;</li>
+                                <li>&nbsp;</li>
+                                <li>&nbsp;</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </td>
+                <td><ul class="sheet">
+                    <li><b>3. 출입문 10개</b>
+                        <ul>
+                            <li>1층 : 7개</li>
+                            <li>2층 : 3개</li>
+                            <li>&nbsp;</li>
+                            <li>&nbsp;</li>
+                            <li>&nbsp; <br> &nbsp;</li>
+                            <li>&nbsp;</li>
+                        </ul><br>
+                    </li>
+                    <li><b>6. 좌석수</b>
+                        <ul>
+                            <li>총 25,000석</li>
+                            <li>VIP석 : 264석</li>
+                            <li>테이블석 : 502석</li>
+                            <li>블루석 : 2,373석</li>
+                            <li>레드석 : 6,399석</li>
+                            <li>옐로우석 : 10,112석</li>
+                            <li>외야석 : 5,813석</li>
+                        </ul>
+                    </li>
+                </ul></td>
+            </tr>
+            <tr class="rTraf">
+                <td>교통안내</td>
+                <td>주차안내</td>
+                <td>주차안내</td>
+                <td>출입구</td>
+            </tr>
+            <tr class="rRight"><td colspan="4" style="font-size: 12; text-align: center;"> Copyrightⓒ 2019 Doosan Bears Inc. All Rights Reserved. </td></tr>
+        </table>
+        <table width="100%" >
+            <thead>
+            <tr>
+                <th scope="col">교통안내</th>
+                <th scope="col">주차안내</th>
+                <th scope="col">주차안내</th>
+                <th scope="col">출입구</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <div>
+                        <p><strong class="blue">파랑버스(간선)</strong>
+                            301, 333, 341, 342, 360, 362, 363, 730</p>
+
+                        <p class="mr-t10"><strong class="green">초록버스(지선)</strong>
+                            2415, 3217, 3314(잠실역 방향), 3411, <br>
+                            3412, 3414, 3415, 3417, 3418, 3422, 4319</p>
+
+                        <p class="mr-t10"><strong class="green">초록버스(경기 일반)</strong>
+                            917, 11-3</p>
+
+                        <p class="mr-t10"><strong class="red">빨간버스(경기 직행)</strong>
+                            1700, 2000, 6900, 7007, 8001</p>
+                    </div>
+                    <div>
+                        <p><strong>공항버스</strong>
+                            6000, 6006</p>
+                    </div>
+                    <div>
+                        <p><strong>지하철</strong>
+                            2호선 종합운동장역5,6번 출구</p>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <p><strong>수용대수</strong>
+                            2,200대</p>
+
+                        <p class="mr-t10"><strong>주차료</strong>
+                            1회 입장시 / 소형-4,000원 / <br>
+                            대형-8,000원 / <br>
+                            요일제 차량 20% 할인을<br>
+                            30% 할인 혜택</p>
+
+                        <p class="mr-t10"><strong>안내전화</strong>
+                            2240-8874</p>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <p><strong>송파탄천주차장</strong>
+                            수용대수 : 1,500대<br>
+                            주차료 : 7시간 2,000원(추가시 1시간당 1,000원씩)<br>
+                            관리처 : 송파개발공사</p>
+
+                        <p class="mr-t10"><strong>강남탄천주차장</strong>
+                            수용대수 : 1,009대<br>
+                            주차료 : 최초30분 500원(추가시 10분당 200원씩)<br>
+                            관리처 : 강남도시관리공단</p>
+
+                        <p class="mr-t10"><strong>한강시민공원 잠실지구 주차장</strong>
+                            이용요금(1일) : 3,000원(소형)<br>
+                            <span class="in">6,000원(중형,버스16인승이하)</span><br>
+                            <span class="in">9,000원(대형,버스16인승이상)</span><br>
+                            운영요일 : 월~토요일(일요일 및 공휴일은 무료)<br>
+                            운영시간 : 09:00 ~ 21:00<br>
+                            문의처 : 피에스오성 452-2122</p>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <p><strong>잠실야구장의 출입구</strong>
+                            1루 내야,3루 내야,1루 외야,<br>
+                            3루 외야, 중앙 출입구<br>
+                            (중앙 출입구는 기자 및 구단 <br>
+                            관계자를 위한 출입구입니다.)</p>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

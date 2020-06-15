@@ -1,0 +1,126 @@
+{% extends "papp/layout.html" %}
+{% block content %}
+<form name="frmSearch" method="GET" action="lgProces">
+    <!-- 1. 분류제목 -->
+    <div class="row p-1">
+        <div class="col-sm-12 text-center">
+            <h2 for="m_title">영화 장르별 검색</h2>
+        </div>
+    </div>
+    <!--2. 분류제목 -->
+    <div class="row p-1">
+        <div class="col-sm-2 text-right"></div>
+        <div class="col-sm-2 text-right">
+            <div class="form-group text-right">
+                <select class="form-control" id="sClass" name="sClass" style="width: 150px;">
+                    <option value="#">장르선택</option>
+                    <option value="드라마">드라마</option>
+                    <option value="판타지">판타지</option>
+                    <option value="서부">서부</option>
+                    <option value="로맨스">로맨스</option>
+                    <option value="모험">모험</option>
+                    <option value="스릴러">스릴러</option>
+                    <option value="느와르">느와르</option>
+                    <option value="컬트">컬트</option>
+                    <option value="다큐멘터리">다큐멘터리</option>
+                    <option value="코미디">코미디</option>
+                    <option value="가족">가족</option>
+                    <option value="미스터리">미스터리</option>
+                    <option value="전쟁">전쟁</option>
+                    <option value="애니메이션">애니메이션</option>
+                    <option value="범죄">범죄</option>
+                    <option value="뮤지컬">뮤지컬</option>
+                    <option value="SF">SF</option>
+                    <option value="액션">액션</option>
+                    <option value="무협">무협</option>
+                    <option value="에로">에로</option>
+                    <option value="서스펜스">서스펜스</option>
+                    <option value="서사">서사</option>
+                    <option value="블랙코미디">블랙코미디</option>
+                    <option value="실험">실험</option>
+                    <option value="영화카툰">영화카툰</option>
+                    <option value="영화음악">영화음악</option>
+                    <option value="영화패러디포스터">영화패러디포스터</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-sm-4 text-left"><input required="required" type="text" class="form-control" id="txColname"
+                name="txColname" placeholder="데이터가 저장될 컬렉션이름을 써주세요" name="txColname">
+        </div>
+        <div class="col-sm-4 text-left"><button type="button" class="btn btn-primary"
+                onclick="doAjax(this.form,'sClass', 'txColname')">검색</button>
+        </div>
+    </div>
+</form>
+
+<div class="row p-1 text-center">
+    <div class="col-sm-12 text-center">
+        <br />
+        <h3>- 조회목록 - </h3>
+        <table class="table table-striped ">
+            <thead>
+                <tr>
+                    <th>순위</th>
+                    <th>제목키워드</th>
+                    <th>빈도수</th>
+                </tr>
+            </thead>
+            <tbody id="tbos">
+
+            </tbody>
+        </table>
+    </div>
+</div>
+<script>
+    // 셀렉트 선택시 mClass변수에 드롭다운값을 할당
+    mClass_v = null;
+
+    // 검색버튼을 누루면 내용을 서버에 전송
+
+    function doAjax(mFrm, mClass, txColname) {
+        alert($('#sClass').val() + '/' + $('#txColname').val());
+
+        $.ajax({
+            url: "http://192.168.0.55:8000/papp/movie2/",
+            type: "GET",
+            data: {
+                'sClass': $('#sClass').val(),
+                'txColname': $('#txColname').val(),
+            },
+            dataType: 'json',
+            contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+            dataType: "text",
+
+            success: function (data) {
+                // 데이터 청결화
+                for (i = 0; i < 10; i++) {
+                    data = data.replace("[", '').replace("[", '').replace(" ", '').replace("]", '').replace("]", '')
+                }
+                data = data.split(',');
+                tbos = $("#tbos");
+                $("#tbos tr").remove();
+                j = 1;
+                alert(tbos)
+
+                for (i = 0; i < data.length; i = i + 2) {
+                    tbos.append("<tr><td>" + j++ + "</td><td>" + data[i] + "</td><td>" + data[i + 1] + "</td></tr>");
+                    // alert(data[i]);alert(data[i+1]);
+                }
+            }
+        });
+    }
+</script>
+
+<!-- 페이지 이동 -->
+<div class="row p-1 text-center">
+    <div class="col-sm-4 text-center"></div>
+    <div class="col-sm-4 text-center">
+        <ul class="pagination">
+            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+            <li class="page-item"><a class="page-link"> | HERE | </a></li>
+            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+        </ul>
+    </div>
+    <div class="col-sm-4 text-center"></div>
+    </form>
+    {% endblock %}

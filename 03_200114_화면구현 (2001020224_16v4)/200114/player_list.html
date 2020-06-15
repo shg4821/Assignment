@@ -1,0 +1,156 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <!-- 페이지 공통 CSS -->
+        <link rel="stylesheet" href="css/global.css">
+        <!-- 폼태그 전용 CSS-->
+        <link rel="stylesheet" href="css/form.css">
+        <style>
+            h2 { font-size: 30px; padding: 15px;}
+        </style>
+    </head>
+    <body>
+        <!-- 헤더 -->
+        <header>
+            <div class="topper">
+                <a href="DSB_Info.html" >
+                    팬 페이지로 이동</a>
+                <audio controls style="border-radius: 2px; ">
+                    <source src="media/강혜원 - 처음 널 보고_1.mp3" type="audio/mp3">
+                </audio>
+            </div>
+            <div class="title">
+                <a href="main_Home.html" id="homelogo">
+                    <img src="img/logo1.png" alt="Home" title="home">
+                </a>
+            </div>
+        </header>
+        <!-- 내비 -->
+        <nav class="pageNav">
+            <ul>
+                <li><a href="main_Home.html"><b>Home</b></a></li>
+                <li class="register">
+                    <a href="javascript:void(0)" class="re_a"><b>Regist</b></a>
+                    <ul class="regist_list">
+                        <li><a href="regist_player.html"><b>Player</b></a></li>
+                        <li><a href="regist_member.html"><b>Member</b></a></li>
+                    </ul>
+                </li>
+                <li><a href="player_list.html"><b>Player</b></a></li>
+                <li><a href="member_list.html"><b>Member</b></a></li>
+                <li><a href="https://www.doosanbears.com/media/notice/1"><b>Board</b></a></li>
+                <li><a href="DSB_Info.html"><b>Fan</b></a></li>
+                <a href="#" style="float: right;" id="logInL">로그인</a>
+            </ul>
+        </nav>
+        <main class="pl_main">
+            <!-- 컨텐츠 -->
+            <section class="pl_li">
+                <h2>- 선수 목록 -</h2>
+                <article>
+                    <table id="memList">
+                        <tr><th>선수번호</th><th>ID</th>              <th>이름</th>  <th>생년월일</th>  <th>포지션</th>  <th>입단년도</th></tr>
+                        <tr><td>88</td>  <td>taehyeong4991</td>   <td>김태형</td><td>1967-09-12</td><td>감　독</td>    <td>2014</td>  </tr>
+                        <tr><td>24</td>  <td>ojw.24</td>          <td>오재원</td><td>1985-02-09</td><td>내야수/C</td>  <td>2007</td>  </tr>
+                        <tr><td>10</td>  <td>parksse10</td>       <td>박세혁</td><td>1990-01-09</td><td>포　수</td>    <td>2011</td>  </tr>
+                        <tr><td>52</td>  <td>kjh305252</td>       <td>김재호</td><td>1985-03-21</td><td>내야수</td>    <td>2004</td>  </tr>
+                        <tr><td>36</td>  <td>on36side</td>        <td>오재일</td><td>1986-10-29</td><td>내야수</td>    <td>2005</td>  </tr>
+                        <tr><td>53</td>  <td>wnghks53</td>        <td>최주환</td><td>1988-02-28</td><td>내야수</td>    <td>2006</td>  </tr>
+                        <tr><td>13</td>  <td>kyoungmin1623</td>   <td>허경민</td><td>1990-08-26</td><td>내야수</td>    <td>2009</td>  </tr>
+                        <tr><td>32</td>  <td>king_jh.32</td>      <td>김재환</td><td>1988-09-22</td><td>외야수</td>    <td>2008</td>  </tr>
+                        <tr><td>37</td>  <td>kunwoo90</td>        <td>박건우</td><td>1990-09-08</td><td>외야수</td>    <td>2009</td>  </tr>
+                        <tr><td>31</td>  <td>somikkd313131</td>   <td>정수빈</td><td>1990-10-07</td><td>외야수</td>    <td>2009</td>  </tr>
+                        <tr><td>15</td>  <td>kookhaeseong__15</td><td>국해성</td><td>1989-10-08</td><td>외야수</td>    <td>2008</td>  </tr>
+                        <tr><td>17</td>  <td>jh________r</td>     <td>류지혁</td><td>1994-01-13</td><td>내야수</td>    <td>2012</td>  </tr>
+                        <tr><td>29</td>  <td>yooheekwan</td>      <td>유희관</td><td>1986-06-01</td><td>투　수</td>    <td>2009</td>  </tr>
+                        <tr><td>28</td>  <td>won_jun_28</td>      <td>장원준</td><td>1985-07-31</td><td>투　수</td>    <td>2015</td>  </tr>
+                        <tr><td>1 </td>  <td>ejrwn1956</td>       <td>함덕주</td><td>1995-01-13</td><td>투　수</td>    <td>2013</td>  </tr>
+                        <tr><td>19</td>  <td>kwon_hyuk</td>       <td>권　혁</td><td>1983-11-06</td><td>투　수</td>    <td>2019</td>  </tr>
+                    </table>
+                    <table id="pageList">
+                        <tr>
+                            <td><a href="#memList">[1]</a></td>
+                            <td><a href="#memList">[2]</a></td>
+                            <td><a href="#memList">[3]</a></td>
+                            <td><a href="#memList">[4]</a></td>
+                            <td><a href="#memList">[5]</a></td>
+                            <td><a href="#memList">[6]</a></td>
+                            <td><a href="#memList">[7]</a></td>
+                            <td><a href="#memList">[8]</a></td>
+                            <td><a href="#memList">[9]</a></td>
+                            <td><a href="#memList">[10]</a></td>
+                            <td><a href="#memList" title="다음 페이지로 이동">다음 ▶</a></td>
+                        </tr>
+                    </table>
+                </article>
+            </section>
+        </main>
+        <!-- 광고 -->
+        <section class="pBanner">
+            <h2>두산베어스 공식 SNS</h2>
+            <hr>
+            <div>
+                <a href="https://www.youtube.com/channel/UCsebzRfMhwYfjeBIxNX1brg">
+            <h2>BearSpotv</h2> <img src="img/bstv.jpg" 
+                alt="베어스포티비" title="베어스포티비 유튜브 채널"
+                style="width: 80%; height: auto;"></a>
+            </div>
+            <div>
+                <a href="https://www.doorundoorun.com/kr/main.do"><h2>두런두런</h2>
+                <img src="img/drdr.png" alt="두런두런" title="두런두런 홈페이지"
+                style="width: 80%; height: auto;"></a>
+            </div>
+            <div>
+                <a href="https://www.instagram.com/doosanbears.1982/"><h2>Instagram</h2>
+                <img src="img/insta.png" alt="인스타그램" title="공식 인스타그램"
+                style="width: 80%; height: auto;"></a>
+            </div>
+            <div>
+                <a href="https://www.facebook.com/1982doosanbears/"><h2>Facebook</h2>
+                <img src="img/fb.png" alt="페이스북" title="공식 페이스북"
+                style="width: 80%; height: auto;"></a>
+            </div>
+            <hr>
+            <h2 style="padding: 5px; font-size: 20;">─ BEARS VIDEO ─</h2>
+            <hr>
+            <h2 style="padding: 5px;">[2019 KS 티저]</h2>
+            <iframe width="100%" height="auto" src="https://www.youtube.com/embed/e3sED4Gl3d8" 
+            frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <p>또 한 번, 가을의 기적 #한국시리즈</p>
+            <h2>[연말결산TOP5]</h2>
+            <iframe width="100%" height="auto" src="https://www.youtube.com/embed/o6PMIK6NVAU" 
+            frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; 
+            picture-in-picture" allowfullscreen></iframe>
+            <p>2019 시즌 리뷰</p>
+            <h2>[선수초대석]</h2>
+            <iframe width="100%" height="auto" src="https://www.youtube.com/embed/7djOvto-4jo" 
+            frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; 
+            picture-in-picture" allowfullscreen></iframe>
+            <p>90년생 3인방 : 정수빈, 허경민, 박건우<br>근황토크</p>
+        </section>
+        <!-- 푸터 -->
+        <footer class="cpr">
+            <svg width="100%" height="100px">
+                <!-- 그라디언트 -->
+                <defs>
+                    <linearGradient id=liFoot x1="0%" y1="0%" x2="0%" y2="100%" >
+                        <stop offset="0%" style="stop-color: #fff; 
+                        stop-opacity: 1;"></stop>
+                        <stop offset="100%" style="stop-color: #EAEAEA; 
+                        stop-opacity: 1;"></stop>
+                    </linearGradient>
+                </defs>
+                <!-- 도형 -->
+                <rect width="100%" height="100%" style="fill: url(#liFoot);"></rect>
+                <!-- 텍스트 -->
+                <text alignment-baseline="central" fill="black"  x="42%" y=50%
+                style="font-weight: border; text-shadow: #fff -1px 1px;
+                font-size: 11px;" >
+                Copyrightⓒ HG With 2019 Doosan Bears Inc. All Rights Reserved.</text>
+            </svg>
+        </footer>
+        <a style="display:scroll;position:fixed;bottom:10px;right:10px;" href="#" 
+        title="맨위로"><img src="img/cw_top.png" width="50px"></a>
+    </body>
+</html>

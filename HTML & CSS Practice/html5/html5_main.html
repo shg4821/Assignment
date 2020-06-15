@@ -1,0 +1,271 @@
+<html>
+    <head>
+        <style>
+            * { margin: 0; padding: 0; font-size: 12px; }
+            header, nav, main, section, footer {
+                border: 1px solid grey; margin: 6px;
+                 padding: 10px; }
+            header {background-color: midnightblue;}
+            header h1 {text-align: center; font-size: 40;}
+            nav ul li { display: inline; margin: 6px; }
+            a:link, a:visited  {text-decoration: none; color: navy;}
+            a:hover {color: mediumspringgreen; text-decoration: underline;}
+            a:active { color: mediumturquoise; }
+            main {background-color: mintcream;}
+            main section {background-color: #fff;}
+            figcaption {text-align: center; color: midnightblue;}
+            mytag {display: block; background-color: mediumaquamarine; padding: 40px;
+            font-size: 35px; text-align: center;}
+            footer{background-color: navajowhite; text-align: right;}
+        </style>
+        <script src="testjs.js"></script>
+    </head>
+    <body>
+        <!-- 타이틀 -->
+        <header>
+            <h1>HTML5 TEST</h1>
+        </header>
+        <!-- 내비 -->
+        <nav id="ulNav">
+            <ul>
+                <li>[<a href="#">HOME</a>]</li>
+                <li>[<a href="#secMyT">사용자정의태그</a>]</li>
+                <li>[<a href="#secFig">IMAGE</a>]</li>
+                <li>[<a href="#jscript">외부 자바스크립트</a>]</li>
+                <li>[<a href="#geById">getElementById</a>]</li>
+                <li>[<a href="#secCvs">CANVAS</a>]</li>
+
+            </ul>
+        </nav>
+        <!-- 컨텐츠 -->
+        <section id="secCvs">
+            <h3>SVG</h3>
+            <p>
+                <h5>삼각형 (polygon : 다각형 ) </h5>
+                <svg height="110" width="210">
+                    <polygon points="100 10, 10 100, 190, 100 10" 
+                    style="fill: #ED1C24; stroke: #839484; stroke-width: 5px;">
+                    </polygon>
+                  </svg>
+            </p>
+            <p>
+                <h5>사각형 (polygon : 다각형 ) </h5>
+                <svg height="110" width="210">
+                    <polygon points="10 10, 10 100, 150 100, 150 10 " 
+                    style="fill: #EAEAEA; stroke: #839484; stroke-width: 5px;">
+                    </polygon>
+                </svg>
+            </p>
+            <p>
+                <h5>오각형 (polygon : 다각형 ) </h5>
+                <svg height="110" width="210">
+                    <polygon points="55 10, 10 50, 30 100, 80 100, 100 50 " 
+                    style="fill: #EAEAEA; stroke: #839484; stroke-width: 5px;">
+                    </polygon>
+                  </svg>
+            </p>
+            <p>
+                <h5>육망성 (polygon : 다각형 ) </h5>
+                <svg width="210" height="160" >
+                    <polygon points="70 10, 18 108, 122 108" 
+                    style="fill: none; stroke: black; stroke-width: 5px;">
+                    </polygon>
+                    <polygon points="70 135, 18 42, 122 42" 
+                    style="fill: none; stroke: #000000; stroke-width: 5px;">
+                    </polygon>
+                    <ellipse cx="70" cy="73" rx="65" ry="65" fill="none" 
+                    stroke="black" stroke-width="5px"/>
+                  </svg>
+            </p>
+            <p>
+                <h5>Logo</h5>
+                <svg height="130" width="500">
+                    <defs>
+                      <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:rgb(114, 199, 255);stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:rgb(255, 133, 174);stop-opacity:1" />
+                      </linearGradient>
+                    </defs>
+                    <ellipse cx="100" cy="70" rx="85" ry="55" fill="url(#grad1)" />
+                    <text fill="#ffffff" font-family="Verdana" font-size="120"
+                    x="50" y="85">SVG</text>
+                </svg>
+            </p>
+            <h3>벡터/비트맵 구분</h3>
+            <p>
+                <h5>벡터 : svg : 수학적 계산으로 그래픽 표현</h5>
+                <svg width="200" height="200">
+                    <circle cx="100" cy="100" r="80" stroke="rgb(255, 187, 218)"
+                    stroke-width="4"></circle>
+
+                </svg>
+                <script>
+                    var c = document.getElementById("cvBcir");
+                    // 내용
+                    var ctx = c.getContext("2d");
+                    ctx.beginPath();
+                    ctx.arc(100, 100, 50, 0, 2 * Math.PI);
+                    ctx.stroke();
+                </script>
+            </p>
+            <p>
+                <h5>비트맵 : 점으로 그래픽 표현</h5>
+                <canvas id="cvBcir" width="200" height="200"
+                style= "border:1px solid red;"> </canvas>
+                <script>
+                    var c = document.getElementById("cvBcir");
+                    // 내용
+                    var ctx = c.getContext("2d");
+                    ctx.beginPath();
+                    ctx.arc(100, 100, 50, 0, 2 * Math.PI);
+                    ctx.stroke();
+                </script>
+            </p>
+            <h3>그라데이션</h3>
+            <p>
+                <canvas id="cvGra" width="200" height="100"
+                style= "border:1px solid red;"> </canvas>
+                <script>
+                    var c = document.getElementById("cvGra");
+                    // 내용
+                    var ctx = c.getContext("2d");
+                    // Create gradient
+                    var grd = ctx.createLinearGradient(0, 0, 200, 100);
+                    grd.addColorStop(0, "rgb(255, 187, 218)");
+                    grd.addColorStop(1, "rgb(144, 192, 255)");
+                    // Fill with gradient
+                    ctx.fillStyle = grd; ctx.fillRect(0, 0, 200, 100);
+
+                    ctx.font = "30px Arial";
+                    ctx.strokeText("Hi!", 70, 60);
+                </script>
+            </p>
+            <h3>원형</h3>
+            <p>
+                <canvas id="cvGra2" width="200" height="100"
+                style= "border:1px solid red;"> </canvas>
+                <script>
+                    var c = document.getElementById("cvGra2");
+                    // 내용
+                    var ctx = c.getContext("2d");
+                    // Create gradient
+                    var grd = ctx.createRadialGradient(100, 50, 5, 90, 60, 100);
+                    grd.addColorStop(0, "rgb(255, 187, 218)");
+                    grd.addColorStop(1, "rgb(144, 192, 255)");
+                    // Fill with gradient
+                    ctx.fillStyle = grd; ctx.fillRect(0, 0, 200, 100);
+                </script>
+            </p>
+            <h3>텍스트이미지</h3>
+            <p>
+                <canvas id="cvTimg" width="200" height="100" 
+                style= "border:1px solid red;"> </canvas>
+                <script>
+                    var c = document.getElementById("cvTimg");
+                    // 내용
+                    var ctx = c.getContext("2d");ctx.font = "30px Arial";
+                    ctx.strokeText("Hello World", 10, 50);
+                </script>
+            </p>
+            <p>
+                <canvas id="cvTimg2" width="200" height="100" 
+                style= "border:1px solid red;"> </canvas>
+                <script>
+                    var c = document.getElementById("cvTimg2");
+                    var ctx = c.getContext("2d");ctx.font = "30px Arial";
+                    ctx.fillText("Hello World", 10, 50);
+                </script>
+            </p>
+            <h3>대각선</h3>
+            <p>
+                <canvas id="cvDiagonal" width="200" height="100" 
+                style= "border:1px solid red;"> </canvas>
+                <script>
+                    var c = document.getElementById("cvDiagonal");
+                    // 내용
+                    var ctx = c.getContext("2d");
+                    ctx.moveTo(0, 0);
+                    ctx.lineTo(200, 100);
+                    ctx.stroke();
+                </script>
+            </p>
+            <h3>사각형</h3>
+            <p>
+                <canvas id="cvSq" width="200" height="100" style= "border:1px solid red;">
+                </canvas>
+                <script>
+                    var c = document.getElementById("cvSq");
+                    // 내용
+                    var ctx = c.getContext("2d");
+                    ctx.moveTo(20, 20); ctx.lineTo(180, 20);
+                    ctx.moveTo(180, 20); ctx.lineTo(180, 80);
+                    ctx.moveTo(180, 80); ctx.lineTo(20, 80);
+                    ctx.moveTo(20, 80); ctx.lineTo(20, 20);
+                    ctx.stroke();
+                </script>
+            </p>
+            <h3>원</h3>
+            <p>
+                <canvas id="cvCi" width="200" height="100" style= "border:1px solid red;">
+                </canvas>
+                <script>
+                    var c = document.getElementById("cvCi");
+                    // 내용
+                    var ctx = c.getContext("2d");
+                    ctx.beginPath();
+                    ctx.arc(95, 50, 40, 0, 2 * Math.PI);
+                    ctx.stroke();
+                </script>
+            </p>
+        </section>
+        
+        <main>
+            <h2>HTML5 연습장</h2>
+            <section id="geById">
+                <h3>아이디로 엘리먼트 호출 :: 자바스크립트</h3>
+                <p>클릭시 이미지 변경</p>
+                <nav>
+                    [ <a href="javascript:changeImg(0)">이미지1</a> ]
+                    [ <a href="javascript:changeImg(1)">이미지2</a> ]
+                    [ <a href="javascript:changeImg(2)">이미지3</a> ]
+                </nav>
+                <figure>
+                    <img id="imgM" src="mr.jpg" alt="이미지" style="width: 15%; margin: 5px;">
+                </figure>
+            </section>
+            <section id="jscript">
+                <h3>외부 자바스크립트</h3>
+                <p>
+                    <button onclick="goNaver();"> 네이버로</button>
+                </p>
+            </section>
+            <section id="secFig">
+                <h3>JAVA SCRIPT</h3>
+                <p>
+                    미래의 미라이
+                </p>
+                <figure>
+                    <img src="mr.jpg" alt="이미지" style="width: 100%; margin: 5px;">
+                    <figcaption>우리 친해질 수 있을까?
+                        4살 소년(!) ‘쿤’, 미래에서 온 여동생 ‘미라이’를 만나다!</figcaption>
+                </figure>
+            </section>
+            <section id="secMyT">
+                <h3>본인이 태그 만들기</h3>
+                <p>
+                    <mytag>내가 만든 My TAG</mytag>
+                </p>
+            </section>
+            <section id="secMyT2">
+                <h3>본인이 태그 만들기</h3>
+                <p>
+                    <mytag>ㄹㅇ 내가 만든 My TAG</mytag>
+                </p>
+            </section>
+        </main>
+        <!-- 저작권 -->
+        <footer>
+            <p>&copy; All Rights Reserved. HG</p>
+        </footer>
+    </body>
+</html>

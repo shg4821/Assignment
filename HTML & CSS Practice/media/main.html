@@ -1,0 +1,111 @@
+<html>
+    <head>
+        <!-- 반응형 -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            * {box-sizing: border-box; font-size: 12px; margin: 0; padding: 0;}
+            main, section {padding: 10px;}
+            /* 타이틀 */
+            header {text-align: center;}
+            /* 컨텐츠 */
+            section {float: left; padding: 10px; height: 300px;}
+            section h2 {font-size: 20; font-style: bold;}
+            main section:first-child, main section:last-child {width: 25%;} 
+            main section:nth-child(2) {width: 50%; border-left: dotted #131230 thin;
+            border-right: dotted #131230 thin; height: 1500px;}
+            /* 플롯 마무리 */
+            main::after {content: ""; display: table; clear: both;}
+            /* 저작권 */
+            /* 반응형 */
+            @media (max-width: 800px) {
+                section {width:100%}
+            }
+        </style>
+        
+    </head>
+    <body>
+        <!-- 타이틀 -->
+        <header id="bgGra">
+            <svg width="100%" height="100px">
+                <defs>
+                    <linearGradient id="lgTitle" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:rgb(114, 199, 255);
+                        stop-opacity:0.7;" />
+                        <stop offset="100%" style="stop-color:rgb(255, 133, 174);
+                        stop-opacity:0.7;" />
+                    </linearGradient>
+                </defs>
+                <rect width="100%" height="100%" style="fill: url(#lgTitle)">
+                </rect>
+                <text alignment-baseline="central" fill="snow" style="font-size: 45px;
+                text-shadow: 2px 2px rgb(200, 200, 200);"
+                x="45%" y="45%">SHG</text>
+            </svg>
+        </header>
+        <!-- 컨텐츠 -->
+        <main>
+            <section class="sec1">섹션1
+                <svg width="100%" height="100%" style="background-image: url('namae.jpg');
+                background-size: cover;">
+                    <defs>
+                        <linearGradient id="lgSec" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:rgb(191, 112, 255);
+                            stop-opacity:0.3;" />
+                            <stop offset="100%" style="stop-color:rgb(13, 49, 73);
+                            stop-opacity:0.5;" />
+                        </linearGradient>
+                    </defs>
+                    <rect width="100%" height="100%" style="fill: url(#lgSec)">
+                    </rect>
+                </svg>
+            </section>
+            <section class="sec2">섹션2
+                <h2>VIDEO</h2>
+                <video width="100%" height="auto" controls>
+                    <source src="sy_jy.mp4" type="video/mp4">
+                </video>
+                <h2>MUSIC</h2>
+                <audio controls>
+                    <source src="강혜원 - 처음 널 보고_1.mp3" type="audio/mp3">
+                </audio>
+                <h2>YouTube</h2>
+                <iframe width="420" height="315"
+                src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1"></iframe>
+                <h2>YouTube-2</h2>
+                <iframe width="100%" height="360px"
+                src="https://www.youtube.com/embed/kkgWXvwIAw0"></iframe>
+            </section>
+            <section class="sec3">섹션3
+                <svg width="100%" height="100%" style="background-image: url('sky.jpg');
+                background-size: cover;">
+                    <defs>
+                        <linearGradient id="lgSec3" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:rgb(255, 129, 91);
+                            stop-opacity:0.2;" />
+                            <stop offset="100%" style="stop-color:rgb(87, 188, 255);
+                            stop-opacity:0.6;" />
+                        </linearGradient>
+                    </defs>
+                    <rect width="100%" height="100%" style="fill: url(#lgSec3)">
+                    </rect>
+                </svg>
+            </section>
+        </main>
+        <!-- 저작권 -->
+        <footer id="gradCopy">
+            <svg width="100%" height="50px">
+                <defs>
+                    <linearGradient id="lgCopy" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:rgb(255, 133, 174);stop-opacity:0.7;" />
+                        <stop offset="100%" style="stop-color:rgb(114, 199, 255);stop-opacity:0.7;" />
+                    </linearGradient>
+                </defs>
+                <rect width="100%" height="100%" style="fill: url(#lgCopy)">
+                </rect>
+                <text alignment-baseline="central" fill="snow" style="font-size: 10px;"
+                x="45%" y="45%">&copy; All Rights Reserved. HG</text>
+            </svg>
+        </footer>
+    </body>
+</html>

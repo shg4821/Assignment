@@ -1,0 +1,339 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <!-- initial-scale=1 : 브라우저 넓이 -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>두산베어스</title>
+        <style>
+            * {box-sizing: border-box;}
+            /* {margin: 0px; padding: 0px; border: aquamarine thin solid;}*/
+            ul {list-style-type: none;}
+            ol {list-style-type: none;}
+            /* 헤더 */
+            header {background-color: #131230; padding: 20px; text-align: center;
+            font-size: 40px; color: #ffffff; height: 100px; align-items: center;}
+            /* 내비 */
+            nav {float: left; width: 15%; padding: 0px; margin-right: 15px; height: 100%;
+                display: block}
+            nav ul {list-style-type: none; margin: 0; padding: 0; overflow: hidden; 
+                float: left; width: 100%;  }
+            nav li a {display: block; color: #131230; padding: 20px; 
+            text-decoration: none; border-bottom: thin #131230 solid;}
+            nav li a:hover {background-color: #131230; color: snow;}
+            /* 아티클 */
+            article {margin: 0px; padding: 0px; float: right; width: 83%; display: block}
+            /* ground */
+            .ground li { float: left; margin: 0px; padding: 0px;  text-align: center; 
+            width: auto; overflow: hidden; }
+            .ground li a {text-decoration: none; color: #131230; padding: 0px; 
+            padding-top: 10; padding-bottom: 10; display: block; padding-left: 15px; 
+            padding-right: 15px;}
+            .tableF { clear: both; display: table; width: 100%; margin-bottom: 20px;
+            border-collapse: separate; border-spacing: 0; border-top: 3px solid #4a4a4a;}
+            .tableF tbody td { border-bottom: 1px solid #dedede; color: #555555; font-size: 16px;
+            position: relative; vertical-align: top; border-right: 1px solid #dedede; 
+            padding: 3px;}
+            .tableF thead th { background: #f5f5f5; position: relative; padding: 13px 0px;
+            font-size: 16px; color: #222222; border-bottom: 1px solid #4a4a4a; 
+            border-right: 1px solid #4a4a4a;}
+            /* player*/
+            .pl li { list-style-type: none; margin: 1; padding: 0; overflow: hidden; 
+                float: left; width: 100%; text-align: center; border: #131230 solid 2px;}
+            .pl li a {text-decoration: none; color: #131230; padding: 0px; 
+            padding-top: 5; padding-bottom: 5; display: block;}
+            li a:hover {background-color: #131230; color: snow;}
+            /* 역대성적 */
+            .tableB {clear: both; display: table; width: 100%; border-collapse: separate; text-align: center;
+            border-spacing: 0; border-top: 3px solid #4a4a4a; margin-bottom: 20px; padding: 5px;}
+            .tableB th {background-color: #C7C6C6; padding: 8px;}
+            /* 저작권 */
+            footer {text-align: center; font-size: 12px; color: gray; padding: 20px;
+            align-items: center;}
+            h3 {color: #131230; font-style: bold;}
+            section:after { content: "　"; display: table; clear:both;}
+            /* 반응형 */
+            @media only screen and (max-width:650px) 
+            { header, nav, article, article img, footer, .ground li, ol img
+            { width:100%; text-align: center; height: auto;} }
+            
+        </style>
+        <script>
+        function printContent(sit) {
+                // test
+                var gro = document.getElementById("gro");
+                gro.innerHTML = "<h1>OK?</h1>\"ㅋㅋ\"";
+                // 적절한 컨텐츠 출력
+                var html = "출력내용";
+                switch(sit){
+                    case '1' : 
+                    html = "<ul><li>경기기록용 3색 전광판<br>(14,080mm X 7.040mm)</li><li>영상표출용 풀컬러 비디오 전광판<br>(14,784mm X 9.856mm)</li></ul><br><br>"
+                    break;
+                    case '2' : 
+                    html = "<ul><li>투수마운드 : 직경 8m 60cm</li><li>웨이팅서클 : 직경 6m 50cm</li><li>1.3루 파울선 : 폭 1m 40cm</li><li>코치박스 : 길이 6m X 폭 3m</li><li>내야 : 14m 80cm <br> (유격수, 2루수 지역)</li><li>12m 80cm (2루 베이스 뒤)</li></ul><br><br>"
+                    break;
+                    case '3' : 
+                    html = "<ul><li>1층 : 7개</li><li>2층 : 3개</li><li>&nbsp;</li></ul><br><br>"
+                    break;
+                    case '4' : 
+                    html = "<ul><li>좌측펜스 : 100m</li><li>우측펜스 : 100m</li><li>중앙펜스 : 125m</li><li>외야펜스 총 높이 : 2m 60cm</li><li>내야그물망 높이 : 3m</li></ul><br><br>"
+                    break;
+                    case '5' : 
+                    html = "<ul><li>외야 전광판 좌우측 1개씩</li><li>좌우 파울선상 1개씩</li><li>본부상단 2개</li></ul><br><br>"
+                    break;
+                    case '6' : 
+                    html = "<ul><li>총 25,000석</li><li>VIP석 : 264석</li><li>테이블석 : 502석</li><li>블루석 : 2,373석</li><li>레드석 : 6,399석</li><li>옐로우석 : 10,112석</li><li>외야석 : 5,813석</li></ul><br><br>"
+                    break;
+                }
+                // 출력
+                gro.innerHTML = html;
+            }
+        </script>
+    </head>
+    <body>
+        <header>
+            <a href="https://www.doosanbears.com/"><img src="s_img/logo.png" 
+            title="두산베어스 홈페이지로 이동" style="width : 80px; float: left;
+             margin-right: 10; align-content: auto; " ></a>
+            <a href="#" style="text-decoration: none; color: white; margin: 0;"><b>DOOSAN BEARS</b></a></header>
+        <section>
+        <nav>
+            <ul>
+                <li>
+                    <p style="font-size: 20px; padding: 5px; text-align: unset; 
+                        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                    <img src="s_img/category.png" style="width: 30px; height: 30px;
+                        float: left; padding: 5px;">
+                    <b>Category</b></p></li>
+                <li><a href="#01"><b>구장안내</b></a></li>
+                <li><a href="#02"><b>선수단</b></a></li>
+                <li><a href="#03"><b>역대 구단 성적</b></a></li>
+                <li><a href="#04"><b>B.I</b></a></li>
+            </ul>
+        </nav>
+        <article>
+            <div id="01"><section>
+                <h1>Ground</h1>
+                <h3>잠실야구장</h3>
+                    <img src="s_img/ground2.jpg" title="잠실구장 배치도" width="500px">
+                    <section>
+                    <ul class="ground">
+                        <li><a href="javascript:printContent('1');"><b>전광판</b></a></li>
+                        <li><a href="javascript:printContent('2');"><b>잔디가 없는 부분</b></a></li>
+                        <li><a href="javascript:printContent('3');"><b>출입문</b></a></li>
+                        <li><a href="javascript:printContent('4');"><b>펜스거리 및 높이</b></a></li>
+                        <li><a href="javascript:printContent('5');"><b>조명탑</b></a></li>
+                        <li><a href="javascript:printContent('6');"><b>좌석수</b></a></li>
+                    </ul></section>
+                    <p id="gro" style="height: 200px; width: 400px; margin-left: 30px;
+                    border: #EAEAEA thin dotted; "></p>
+                    <section>
+                    <hr>
+                    <h3>상세안내</h3>
+                        <table width="100%" class="tableF">
+                            <thead>
+                            <tr>
+                                <th scope="col">교통안내</th>
+                                <th scope="col">주차안내</th>
+                                <th scope="col">주차안내</th>
+                                <th scope="col">출입구</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>
+                                    <div>
+                                        <p><strong style="color: blue;">파랑버스(간선)</strong><br><br>
+                                            301, 333, 341, 342, 360, 362, 363, 730</p>
+    
+                                        <p class="mr-t10"><strong style="color: green">초록버스(지선)</strong><br><br>
+                                            2415, 3217, 3314(잠실역 방향), 3411, <br>
+                                            3412, 3414, 3415, 3417, 3418, 3422, 4319</p>
+    
+                                        <p class="mr-t10"><strong style="color: green">초록버스(경기 일반)</strong><br><br>
+                                            917, 11-3</p>
+    
+                                        <p class="mr-t10"><strong style="color: red">빨간버스(경기 직행)</strong><br><br>
+                                            1700, 2000, 6900, 7007, 8001</p>
+                                    </div>
+                                    <div>
+                                        <p><strong>공항버스</strong>
+                                            6000, 6006</p>
+                                    </div>
+                                    <div>
+                                        <p><strong>지하철</strong>
+                                            2호선 종합운동장역5,6번 출구</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <p><strong>수용대수</strong>
+                                            2,200대</p>
+    
+                                        <p class="mr-t10"><strong>주차료</strong>
+                                            1회 입장시 / 소형-4,000원 / <br>
+                                            대형-8,000원 / <br>
+                                            요일제 차량 20% 할인을<br>
+                                            30% 할인 혜택</p>
+    
+                                        <p class="mr-t10"><strong>안내전화</strong>
+                                            2240-8874</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <p><strong>송파탄천주차장</strong>
+                                            수용대수 : 1,500대<br>
+                                            주차료 : 7시간 2,000원(추가시 1시간당 1,000원씩)<br>
+                                            관리처 : 송파개발공사</p>
+    
+                                        <p class="mr-t10"><strong>강남탄천주차장</strong>
+                                            수용대수 : 1,009대<br>
+                                            주차료 : 최초30분 500원(추가시 10분당 200원씩)<br>
+                                            관리처 : 강남도시관리공단</p>
+    
+                                        <p class="mr-t10"><strong>한강시민공원 잠실지구 주차장</strong>
+                                            이용요금(1일) : 3,000원(소형)<br>
+                                            <span class="in">6,000원(중형,버스16인승이하)</span><br>
+                                            <span class="in">9,000원(대형,버스16인승이상)</span><br>
+                                            운영요일 : 월~토요일(일요일 및 공휴일은 무료)<br>
+                                            운영시간 : 09:00 ~ 21:00<br>
+                                            문의처 : 피에스오성 452-2122</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <p><strong>잠실야구장의 출입구</strong>
+                                            1루 내야,3루 내야,1루 외야,<br>
+                                            3루 외야, 중앙 출입구<br>
+                                            (중앙 출입구는 기자 및 구단 <br>
+                                            관계자를 위한 출입구입니다.)</p>
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                </section>
+            </div>
+            <div id="02"><section>
+                <h1 title="선수단 안내">Player</h1>
+                <ul class="pl">
+                    <li><a href="https://www.doosanbears.com/players/pitchers" target="dp"><b>투수</b></a></li>
+                    <li><a href="https://www.doosanbears.com/players/batters" target="dp"><b>타자</b></a></li>
+                    <li><a href="https://www.doosanbears.com/players/entry" target="dp"><b>1군 엔트리</b></a></li>
+                </ul>
+                <iframe src="" name="dp" style="width: 100%; height: 450px;"></iframe>
+            </div></section>
+            <hr>
+            <div id="03"><section>
+                <h1>Records</h1>
+                <table width="100%" class="tableB">
+                    <thead><tr>
+                        <th scope="col">연도</th>
+                        <th scope="col">경기</th>
+                        <th scope="col">승</th>
+                        <th scope="col">패</th>
+                        <th scope="col">무</th>
+                        <th scope="col">승률</th>
+                        <th scope="col">순위</th>
+                        <th scope="col">득점</th>
+                        <th scope="col">실점</th>
+                        <th scope="col">홈런</th>
+                        <th scope="col">도루</th>
+                        <th scope="col">타율</th>
+                        <th scope="col">ERA</th>
+                    </tr></thead>
+                    <tbody>
+                        <tr><td>2019</td> <td>144</td> <td>88</td> <td>55</td> <td>1</td> <td>0.615</td> <td>1</td> <td>550</td> <td>83 </td> <td>84</td>  <td>102</td> <td>0.280</td> <td>3.51</td></tr>
+                        <tr><td>2018</td> <td>144</td> <td>93</td> <td>51</td> <td>0</td> <td>0.646</td> <td>2</td> <td>756</td> <td>77 </td> <td>191</td> <td>96 </td> <td>0.310</td> <td>5.00</td></tr>
+                        <tr><td>2017</td> <td>144</td> <td>84</td> <td>57</td> <td>3</td> <td>0.596</td> <td>2</td> <td>678</td> <td>90 </td> <td>178</td> <td>69 </td> <td>0.290</td> <td>4.38</td></tr>
+                        <tr><td>2016</td> <td>144</td> <td>93</td> <td>50</td> <td>1</td> <td>0.650</td> <td>1</td> <td>682</td> <td>79 </td> <td>183</td> <td>85 </td> <td>0.300</td> <td>4.46</td></tr>
+                        <tr><td>2015</td> <td>144</td> <td>79</td> <td>65</td> <td>0</td> <td>0.549</td> <td>3</td> <td>776</td> <td>93 </td> <td>140</td> <td>111</td> <td>0.290</td> <td>5.03</td></tr>
+                        <tr><td>2014</td> <td>128</td> <td>59</td> <td>68</td> <td>1</td> <td>0.465</td> <td>6</td> <td>733</td> <td>81 </td> <td>108</td> <td>111</td> <td>0.290</td> <td>5.43</td></tr>
+                        <tr><td>2013</td> <td>128</td> <td>71</td> <td>54</td> <td>3</td> <td>0.568</td> <td>2</td> <td>625</td> <td>61 </td> <td>95 </td> <td>172</td> <td>0.290</td> <td>4.58</td></tr>
+                        <tr><td>2012</td> <td>133</td> <td>68</td> <td>62</td> <td>3</td> <td>0.523</td> <td>3</td> <td>519</td> <td>78 </td> <td>59 </td> <td>116</td> <td>0.260</td> <td>3.59</td></tr>
+                        <tr><td>2011</td> <td>133</td> <td>61</td> <td>70</td> <td>2</td> <td>0.466</td> <td>5</td> <td>619</td> <td>81 </td> <td>92 </td> <td>130</td> <td>0.270</td> <td>4.32</td></tr>
+                        <tr><td>2010</td> <td>133</td> <td>73</td> <td>57</td> <td>3</td> <td>0.562</td> <td>3</td> <td>669</td> <td>91 </td> <td>149</td> <td>128</td> <td>0.280</td> <td>4.63</td></tr>
+                        <tr><td>2009</td> <td>133</td> <td>71</td> <td>60</td> <td>2</td> <td>0.542</td> <td>3</td> <td>662</td> <td>83 </td> <td>120</td> <td>129</td> <td>0.280</td> <td>4.62</td></tr>
+                        <tr><td>2008</td> <td>126</td> <td>70</td> <td>56</td> <td>0</td> <td>0.556</td> <td>2</td> <td>542</td> <td>92 </td> <td>68 </td> <td>189</td> <td>0.280</td> <td>3.89</td></tr>
+                        <tr><td>2007</td> <td>126</td> <td>70</td> <td>54</td> <td>2</td> <td>0.565</td> <td>2</td> <td>480</td> <td>73 </td> <td>78 </td> <td>161</td> <td>0.260</td> <td>3.45</td></tr>
+                        <tr><td>2006</td> <td>126</td> <td>63</td> <td>60</td> <td>3</td> <td>0.512</td> <td>5</td> <td>467</td> <td>95 </td> <td>55 </td> <td>132</td> <td>0.260</td> <td>3.36</td></tr>
+                        <tr><td>2005</td> <td>126</td> <td>72</td> <td>51</td> <td>3</td> <td>0.585</td> <td>2</td> <td>465</td> <td>80 </td> <td>63 </td> <td>103</td> <td>0.270</td> <td>3.42</td></tr>
+                        <tr><td>2004</td> <td>133</td> <td>70</td> <td>62</td> <td>1</td> <td>0.530</td> <td>3</td> <td>560</td> <td>88 </td> <td>89 </td> <td>71 </td> <td>0.270</td> <td>3.88</td></tr>
+                        <tr><td>2003</td> <td>133</td> <td>57</td> <td>74</td> <td>2</td> <td>0.435</td> <td>7</td> <td>619</td> <td>90 </td> <td>90 </td> <td>58 </td> <td>0.280</td> <td>4.25</td></tr>
+                        <tr><td>2002</td> <td>133</td> <td>66</td> <td>65</td> <td>2</td> <td>0.504</td> <td>5</td> <td>562</td> <td>88 </td> <td>130</td> <td>106</td> <td>0.260</td> <td>3.93</td></tr>
+                        <tr><td>2001</td> <td>133</td> <td>65</td> <td>63</td> <td>5</td> <td>0.508</td> <td>1</td> <td>733</td> <td>109</td> <td>130</td> <td>132</td> <td>0.280</td> <td>4.96</td></tr>
+                        <tr><td>2000</td> <td>133</td> <td>76</td> <td>57</td> <td>0</td> <td>0.571</td> <td>2</td> <td>616</td> <td>113</td> <td>150</td> <td>115</td> <td>0.290</td> <td>4.22</td></tr>
+                        <tr><td>1999</td> <td>132</td> <td>76</td> <td>51</td> <td>5</td> <td>0.598</td> <td>2</td> <td>657</td> <td>0  </td> <td>141</td> <td>136</td> <td>0.280</td> <td>4.58</td></tr>
+                        <tr><td>1998</td> <td>126</td> <td>61</td> <td>62</td> <td>3</td> <td>0.496</td> <td>4</td> <td>506</td> <td>91 </td> <td>102</td> <td>123</td> <td>0.260</td> <td>3.60</td></tr>
+                        <tr><td>1997</td> <td>126</td> <td>57</td> <td>64</td> <td>5</td> <td>0.471</td> <td>5</td> <td>551</td> <td>112</td> <td>84 </td> <td>143</td> <td>0.250</td> <td>3.84</td></tr>
+                        <tr><td>1996</td> <td>126</td> <td>47</td> <td>73</td> <td>6</td> <td>0.392</td> <td>8</td> <td>520</td> <td>103</td> <td>82 </td> <td>78 </td> <td>0.240</td> <td>3.69</td></tr>
+                        <tr><td>1995</td> <td>126</td> <td>74</td> <td>47</td> <td>5</td> <td>0.612</td> <td>1</td> <td>500</td> <td>107</td> <td>106</td> <td>121</td> <td>0.270</td> <td>3.42</td></tr>
+                        <tr><td>1994</td> <td>126</td> <td>53</td> <td>72</td> <td>1</td> <td>0.424</td> <td>7</td> <td>507</td> <td>116</td> <td>75 </td> <td>81 </td> <td>0.250</td> <td>3.46</td></tr>
+                        <tr><td>1993</td> <td>126</td> <td>66</td> <td>55</td> <td>5</td> <td>0.545</td> <td>3</td> <td>405</td> <td>97 </td> <td>59 </td> <td>86 </td> <td>0.260</td> <td>2.89</td></tr>
+                        <tr><td>1992</td> <td>126</td> <td>56</td> <td>66</td> <td>4</td> <td>0.459</td> <td>5</td> <td>582</td> <td>116</td> <td>110</td> <td>96 </td> <td>0.260</td> <td>4.21</td></tr>
+                        <tr><td>1991</td> <td>126</td> <td>51</td> <td>73</td> <td>2</td> <td>0.411</td> <td>8</td> <td>593</td> <td>118</td> <td>59 </td> <td>135</td> <td>0.250</td> <td>4.21</td></tr>
+                        <tr><td>1990</td> <td>120</td> <td>35</td> <td>80</td> <td>5</td> <td>0.304</td> <td>7</td> <td>616</td> <td>106</td> <td>62 </td> <td>83 </td> <td>0.230</td> <td>4.72</td></tr>
+                        <tr><td>1989</td> <td>120</td> <td>54</td> <td>63</td> <td>3</td> <td>0.462</td> <td>5</td> <td>481</td> <td>95 </td> <td>42 </td> <td>136</td> <td>0.250</td> <td>3.70</td></tr>
+                        <tr><td>1988</td> <td>108</td> <td>54</td> <td>52</td> <td>2</td> <td>0.509</td> <td>5</td> <td>447</td> <td>81 </td> <td>44 </td> <td>88 </td> <td>0.260</td> <td>3.73</td></tr>
+                        <tr><td>1987</td> <td>108</td> <td>55</td> <td>52</td> <td>1</td> <td>0.514</td> <td>4</td> <td>405</td> <td>96 </td> <td>30 </td> <td>73 </td> <td>0.260</td> <td>3.26</td></tr>
+                        <tr><td>1986</td> <td>108</td> <td>56</td> <td>48</td> <td>4</td> <td>0.538</td> <td>4</td> <td>341</td> <td>95 </td> <td>38 </td> <td>78 </td> <td>0.250</td> <td>2.61</td></tr>
+                        <tr><td>1985</td> <td>110</td> <td>51</td> <td>57</td> <td>2</td> <td>0.472</td> <td>4</td> <td>416</td> <td>91 </td> <td>67 </td> <td>107</td> <td>0.260</td> <td>3.14</td></tr>
+                        <tr><td>1984</td> <td>100</td> <td>58</td> <td>41</td> <td>1</td> <td>0.586</td> <td>3</td> <td>298</td> <td>82 </td> <td>53 </td> <td>111</td> <td>0.260</td> <td>2.53</td></tr>
+                        <tr><td>1983</td> <td>100</td> <td>44</td> <td>55</td> <td>1</td> <td>0.444</td> <td>5</td> <td>432</td> <td>110</td> <td>50 </td> <td>58 </td> <td>0.260</td> <td>3.54</td></tr>
+                        <tr><td>1982</td> <td>80</td>  <td>56</td> <td>24</td> <td>0</td> <td>0.700</td> <td>1</td> <td>318</td> <td>98 </td> <td>57 </td> <td>106</td> <td>0.280</td> <td>3.19</td></tr>
+                     </tbody>
+                </table>
+            </div></section>
+            <div id="04"><section>
+                <hr>
+                <h1>Team B.I.</h1>
+                <ol>
+                    <li><h2>Emblem</h2><img src="s_img/2020-01-02 19;40;27.JPEG" title="엠블럼">
+                        <h3>두산베어스의 새로운 엠블럼</h3>
+                        <p>과거 OB베어스 시절의 상징과도 같았던 빨간색과 짙은 남색 <br>
+                            이는 1982년 국내 최초의 프로야구단이자 원년 우승을 이뤄낸 베어스의 역사와 전통에 대한 자부심과 긍지를 의미합니다.<br>
+                            뿐만 아니라, 'BEARS'라는 글자에 곡선을 배제, 승리를 위해서라면 그 어떤 것도 거칠 것이 없다는 베어스의 곧고 강렬한 집념과 투지를 강하게 표현했습니다. 두산베어스의 역사성, 그것에 대한 경의, 그리고 명문 강호 두산베어스로서의 긍지와 승리를 향한 집념.<br>
+                            그 모든 것들이 두산베어스의 새 엠블럼에 녹아있습니다.</p>
+                    </li>
+                    <li><h2>Logo Type</h2><img src="s_img/2020-01-02 19;41;03.JPEG" title="로고타입">
+                        <h3>두산베어스의 새로운 로고타입</h3>
+                        <p>두산베어스의 새로운 로고는 1982년 창단한 대한민국 최초의 프로야구단으로서의 자부심과 원년 우승 명문 구단의 느낌을 살리기 위해 강렬한 색과 곧은 서체로 전통적이면서도 공격적이고 강인한 이미지를 표현했습니다. <br>
+                            항상 정상을 향해 돌진하는 두산베어스의 곧은 의지를 천명하기 위한 강한 체력과 정신력을 담은 두산베어스의 새로운 얼굴입니다.</p>
+                        <h3>컬러</h3>
+                        <p>빨간색과 짙은 남색, 흰색 만을 이용하여 원년 팀에 대한 정통성을 유지하면서도 공격적인 야구를 표방하는 두산베어스의 팀 컬러에 걸맞는 강렬함을 강조했습니다.</p>
+                    </li>
+                    <li><h2>Symbol Mark</h2><img src="s_img/2020-01-02 19;41;20.JPEG" title="심볼마크">
+                        <h3>두산베어스의 새로운 심볼</h3>
+                        <p>두산(Doosan)을 상징하는 'D'자를 곧고 강하게 표현한 새로운 심볼마크입니다. <br>
+                            프로야구 최초 창단과 원년도 우승을 자랑하는 명문 구단으로서의 자부심과 정통성을 표현하고 있습니다. <br>
+                            또한 빨간색과 짙은 남색, 그리고 곧고 강한 서체를 사용하여 두산베어스의 승리를 향한 열정과 투지를 담아냈습니다.</p>
+                    </li>
+                    <li><h2>Uniform</h2><img src="s_img/2020-01-02 19;41;34.JPEG" title="유니폼"></li>
+                    <li><h2>Mascot</h2><img src="s_img/img_bi_05.png" title="마스코트">
+                        <ul style="margin-top: 15; list-style: none; " >
+                            <li style="background-image: url(dot.JPEG); background-repeat: no-repeat; 
+                            background-size: 3px; background-position: left; padding-left: 5px; padding-right: 5px;">
+                            두산베어스의 상징동물인 곰을 역동적인 로봇 캐릭터로 형상화</li>
+                            <li style="background-image: url(dot.JPEG); background-repeat: no-repeat; 
+                            background-size: 3px; background-position: left; padding-left: 5px; padding-right: 5px;">강인함과 미래지향적인 이미지 강조</li>
+                            <li style="background-image: url(dot.JPEG); background-repeat: no-repeat; 
+                            background-size: 3px; background-position: left; padding-left: 5px; padding-right: 5px;">두산그룹의 도전과 혁신적인 표현 <br></li>
+                            <ul>
+                                <li style="padding-left: 15px; color: #839484;">두산중공업과 두산인프라코어, 두산엔진 등 두산그룹 주요 계열사의 방대한 인프라 지원 사업</li>
+                                <li style="padding-left: 15px; color: #839484;">(중장비, 발전/담수장비, 첨단기계, 군수장비, 엔진사업 등)의 특징을 접목</li>
+                            </ul>
+                            <li style="background-image: url(dot.JPEG); background-repeat: no-repeat; 
+                            background-size: 3px; background-position: left; padding-left: 5px; padding-right: 5px;">현재에 만족하지 않고 정상을 향해 언제나 과감한 변신을 추구하며 한 단계 앞으로 도약하는 명문구단 베어스의 이미지를 표현</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div></section>
+        </article>
+        </section>
+        <hr>
+        <a style="display:scroll;position:fixed;bottom:10px;right:10px;" href="#" 
+        title="맨위로"><img src="img/cw_top.png" width="50px"></a>
+        <footer>Copyright&copy; 2020 HG. All Rights Reserved.</footer >
+    </body>
+</html>

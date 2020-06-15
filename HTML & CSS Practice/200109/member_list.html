@@ -1,0 +1,168 @@
+<html>
+    <head>
+        <style>
+            /* 공통 */
+            * { box-sizing: border-box; margin: 0px; font-size: 12px; }
+            h2 { font-size: 30px; padding: 15px;}
+            /* 내비 */
+            .nv_top { overflow: hidden; background-color: #131230; margin-top: 5px; }
+            .nv_top a { float: left; display: block; color: white; text-align: center;
+                padding: 14px 16px; text-decoration: none; }
+            .nv_top a:hover {background-color: #EAEAEA; color: #ED1C24;}
+            /* 컨텐츠 */
+            .cont { float: left; width: 80%; padding: 0 20; border-left: thin dotted #243b55;
+                border-right: thin dotted #243b55; }
+            /* 회원 목록 */
+            table { border-collapse: collapse; width: 100%; }
+            th, td { text-align: center; padding: 8px; }
+            th {border-top: black 3px solid; border-bottom: solid 1px black;
+            background-color: #131230; color: white; font-size: 14px; 
+            text-shadow: #ED1C24 0px 0px; padding: 10px 0px;}
+            tr:nth-child(even){ background-color: #eaeaea; }
+            #pageList { margin: 10px 350px; float: left; width: 400; align-items: center; }
+            #pageList a { padding: 0px; margin: 0px; text-align: center; width: 10px;
+                text-decoration: none; color: black; }
+            /* 배너 */
+            .secBan { background-color: mintcream; float: left ; width: 20%; padding: 15;
+            margin-top: 7; text-align: center;  }
+            .secBan p { margin: 10; padding: 5px; border-bottom: solid thin #EAEAEA; 
+            padding-bottom: 20px;}
+            /* 저작권 */
+
+            /* 반응형 */
+            @media only screen and (max-width:620px) {
+                .banner, .secCon, .secBan {width: 100%;}
+            }
+            </style>
+    </head>
+    <body>
+        <!-- 헤더 -->
+        <header>
+            <svg width="100%" height="150px">
+                <!-- 그라디언트 -->
+                <defs>
+                    <linearGradient id=liTitle x1="100%" y1="0%" x2="0%" y2="100%" >
+                        <stop offset="40%" style="stop-color: #3498db; 
+                        stop-opacity: 1;"></stop>
+                        <stop offset="100%" style="stop-color: #2c3e50; 
+                        stop-opacity: 1;"></stop>
+                    </linearGradient>
+                </defs>
+                <!-- 도형 -->
+                <rect width="100%" height="100%" style="fill: url(#liTitle);"></rect>
+                <!-- 텍스트 -->
+                <text alignment-baseline="central" fill="white" 
+                style="font-weight: border; font-size: 45px; text-shadow: #3498db -2px 2px;"
+                x="5%" y=45% >HG</text>
+                <text alignment-baseline="central" fill="whitesmoke" 
+                style="font-weight: border; font-size: 15px; text-shadow: #2c3e50 -1px 1px;"
+                x="35%" y=20% ></text>
+            </svg>
+        </header>
+        <!-- overflow: auto; -->
+        <main style="overflow: auto;">
+            <!-- 내비 -->
+            <nav class="nv_top">
+                <a href="#"><b>Home</b></a>
+                <a href="practice.html"><b>Register</b></a>
+                <a href="#"><b>List</b></a>
+                <a href="#"><b>Contact</b></a>
+                <a href="DOOSAN_B.html"><b>Info</b></a>
+            </nav>
+            <!-- 컨텐츠 -->
+            <section class="cont">
+                <h2>- 회원 목록 -</h2>
+                <article>
+                    <table id="memList">
+                        <tr><th>회원번호</th><th>ID</th>              <th>이름</th>  <th>생년월일</th>  <th>포지션</th>  <th>최종 접속일자</th></tr>
+                        <tr><td>00001</td>  <td>taehyeong4991</td>   <td>김태형</td><td>1967-09-12</td><td>감　독</td>    <td>2020-01-09</td>  </tr>
+                        <tr><td>00002</td>  <td>ojw.24</td>          <td>오재원</td><td>1985-02-09</td><td>내야수/C</td><td>2020-01-08</td>  </tr>
+                        <tr><td>00003</td>  <td>parksse10</td>       <td>박세혁</td><td>1990-01-09</td><td>포　수</td>    <td>2020-01-07</td>  </tr>
+                        <tr><td>00004</td>  <td>kjh305252</td>       <td>김재호</td><td>1985-03-21</td><td>내야수</td>    <td>2020-01-07</td>  </tr>
+                        <tr><td>00005</td>  <td>on36side</td>        <td>오재일</td><td>1986-10-29</td><td>내야수</td>    <td>2020-01-07</td>  </tr>
+                        <tr><td>00006</td>  <td>wnghks53</td>        <td>최주환</td><td>1988-02-28</td><td>내야수</td>    <td>2020-01-08</td>  </tr>
+                        <tr><td>00007</td>  <td>kyoungmin1623</td>   <td>허경민</td><td>1990-08-26</td><td>내야수</td>    <td>2020-01-09</td>  </tr>
+                        <tr><td>00008</td>  <td>king_jh.32</td>      <td>김재환</td><td>1988-09-22</td><td>외야수</td>    <td>2020-01-09</td>  </tr>
+                        <tr><td>00009</td>  <td>kunwoo90</td>        <td>박건우</td><td>1990-09-08</td><td>외야수</td>    <td>2020-01-09</td>  </tr>
+                        <tr><td>00010</td>  <td>somikkd313131</td>   <td>정수빈</td><td>1990-10-07</td><td>외야수</td>    <td>2020-01-02</td>  </tr>
+                        <tr><td>00011</td>  <td>kookhaeseong__15</td><td>국해성</td><td>1989-10-08</td><td>외야수</td>    <td>2020-01-04</td>  </tr>
+                        <tr><td>00012</td>  <td>jh________r</td>     <td>류지혁</td><td>1994-01-13</td><td>내야수</td>    <td>2020-01-08</td>  </tr>
+                        <tr><td>00013</td>  <td>yooheekwan</td>      <td>유희관</td><td>1986-06-01</td><td>투　수</td>    <td>2020-01-03</td>  </tr>
+                        <tr><td>00014</td>  <td>won_jun_28</td>      <td>장원준</td><td>1985-07-31</td><td>투　수</td>    <td>2020-01-09</td>  </tr>
+                        <tr><td>00015</td>  <td>ejrwn1956</td>       <td>함덕주</td><td>1995-01-13</td><td>투　수</td>    <td>2020-01-05</td>  </tr>
+                        <tr><td>00016</td>  <td>kwon_hyuk</td>       <td>권　혁</td><td>1983-11-06</td><td>투　수</td>    <td>2020-01-07</td>  </tr>
+                    </table>
+                    <table id="pageList">
+                        <tr>
+                            <td><a href="#memList">[1]</a></td>
+                            <td><a href="#memList">[2]</a></td>
+                            <td><a href="#memList">[3]</a></td>
+                            <td><a href="#memList">[4]</a></td>
+                            <td><a href="#memList">[5]</a></td>
+                            <td><a href="#memList">[6]</a></td>
+                            <td><a href="#memList">[7]</a></td>
+                            <td><a href="#memList">[8]</a></td>
+                            <td><a href="#memList">[9]</a></td>
+                            <td><a href="#memList">[10]</a></td>
+                            <td><a href="#memList" title="다음 페이지로 이동">다음 ▶</a></td>
+                        </tr>
+                    </table>
+                </article>
+            </section>
+            <!-- 광고 -->
+            <section class="secBan">
+                <h2><a href="https://www.youtube.com/channel/UCsebzRfMhwYfjeBIxNX1brg"><img src="bstv.jpg" 
+                    alt="베어스포티비" style="width: 100%; height: auto;"></a></h2>
+                <h2>[2019 KS 티저]</h2>
+                <iframe width="100%" height="auto" src="https://www.youtube.com/embed/e3sED4Gl3d8" 
+                frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <p>광고내용 . . .</p>
+                <h2>[연말결산TOP5]</h2>
+                <iframe width="100%" height="auto" src="https://www.youtube.com/embed/o6PMIK6NVAU" 
+                frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; 
+                picture-in-picture" allowfullscreen></iframe>
+                <p>2019 시즌 리뷰</p>
+                <h2>[선수초대석]</h2>
+                <iframe width="100%" height="auto" src="https://www.youtube.com/embed/7djOvto-4jo" 
+                frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; 
+                picture-in-picture" allowfullscreen></iframe>
+                <p>90년생 3인방 : 정수빈, 허경민, 박건우<br>근황토크</p>
+                <!-- 이미지 -->
+                <svg width="100%" height="330px" style="background-image: url('bp.jpg');
+                background-size: 100%;">
+                    <defs>
+                        <linearGradient id="lgSec3" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#EAEAEA;
+                            stop-opacity:0.1;" />
+                            <stop offset="100%" style="stop-color:#131230;
+                            stop-opacity:1;" />
+                        </linearGradient>
+                    </defs>
+                    <rect width="100%" height="100%" style="fill: url(#lgSec3)">
+                    </rect>
+                </svg>
+            </section>
+        </main>
+        <!-- 푸터 -->
+        <footer>
+            <svg width="100%" height="100px">
+                <!-- 그라디언트 -->
+                <defs>
+                    <linearGradient id=liFoot x1="0%" y1="0%" x2="0%" y2="100%" >
+                        <stop offset="40%" style="stop-color: #fff; 
+                        stop-opacity: 1;"></stop>
+                        <stop offset="100%" style="stop-color: #283048; 
+                        stop-opacity: 1;"></stop>
+                    </linearGradient>
+                </defs>
+                <!-- 도형 -->
+                <rect width="100%" height="100%" style="fill: url(#liFoot);"></rect>
+                <!-- 텍스트 -->
+                <text alignment-baseline="central" fill="black"  x="42%" y=50%
+                style="font-weight: border; text-shadow: #fff -1px 1px;
+                font-size: 11px;" >
+                Copyright&copy; 2020 HG. All Rights Reserved.</text>
+            </svg>
+        </footer>
+    </body>
+</html>

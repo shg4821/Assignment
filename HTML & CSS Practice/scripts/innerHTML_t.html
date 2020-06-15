@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <style>
+            /*내비*/
+            ul {list-style-type: none; margin: 0; padding: 0; overflow: hidden;
+            background-color: mediumaquamarine;}
+            li {float: left;}
+            li a {display: block; color: midnightblue; text-align: center;
+            padding: 10px; text-decoration: none;}
+            li a:hover {background-color: skyblue;}
+        </style>
+        <script>
+            /* 클릭시 컨텐츠를 출력 */
+            function printContent(pPart) {
+                // test
+                console.log("호출됨 !");
+                // test2
+                var pCon = document.getElementById("pCon");
+                pCon.innerHTML = "<h1>OK?</h1>\"ㅋㅋ\"";
+                // 적절한 컨텐츠 출력
+                var html = "출력내용";
+                switch(pPart){
+                    case 'hd' : 
+                    html = "<h1>헤드라인</h1><p>내용</p>"
+                    break;
+                    case 'mv' : 
+                    html = "<h1>영화 1위</h1><p>내용</p>"
+                    break;
+                    case 'sp' : 
+                    html = "<h1>쇼핑 1위</h1><p>내용</p>"
+                    break;
+                }
+                // 출력
+                pCon.innerHTML = html;
+            }
+        </script>
+    </head>
+    <body>
+        <h1 style="text-align: center;">버튼을 클릭하면 아래의 내용이 바뀜</h1>
+        <!--내비-->
+        <ul>
+            <li><a href="javascript:printContent('hd');">헤드라인</a></li>
+            <li><a href="javascript:printContent('mv');">영화 1위</a></li>
+            <li><a href="javascript:printContent('sp');">쇼핑 1위</a></li>
+        </ul>
+        <!-- 클릭 시 컨텐츠가 출력될 영역 -->
+        <p id="pCon">
+
+        </p>
+    </body>
+</html>

@@ -1,0 +1,200 @@
+<html>
+    <head>
+        <title>2020.01.08</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <style>
+            * {box-sizing: border-box; padding: 0px; margin: 0px; font-size: 14px;}
+            /* 헤더 */
+            header { padding: 0px; margin: 0px; }
+            /* 컨텐츠 */
+            main { padding: 10px; }
+            table, form {padding: 0px; width: 800px; margin: 10; font-size: 1em;}
+            table {background-color: snow;}
+            fieldset {margin: 10px 20% 0px 20%;}
+            table tr { height: 7px; }
+            table td { align-items: center; padding: 2 0 2 0; margin: 0px; }
+            .t01 {width: 120px; padding-left: 4px; background-color: rgb(221, 221, 221);}
+            input {width: 150px; height: 25px;}
+            input[type=radio], #fav, #uCl {width: auto; height: auto;}
+            #uCn {width: 70px; height: 25px;}
+            input[type=button] { background-color: mediumaquamarine; color: #4a4a4a; 
+            width: 75px; padding: 1px; border: none; border-radius: 4px; 
+            cursor: pointer; }
+            button { background-color: mediumaquamarine; color: #4a4a4a; 
+            width: 100px; height: 40px; padding: 1px; border: none; border-radius: 4px; 
+            cursor: pointer; }
+            button:hover { background-color: #4a4a4a; width: 100px; height: 40px;
+            color: mediumaquamarine; padding: 1px; border: none; border-radius: 4px; 
+            cursor: pointer; }
+            /* 저작권 */
+            footer { text-align: center; color: #EAEAEA; height: 50px;
+            background-color: rgb(59, 59, 59); padding: 15px;}
+            .btn { padding: 0px 40%; margin: 0px; width: 120px; }
+            @media (max-width: 800px) {
+                header, nav, main, footer {width:100%} }
+        </style>
+
+    </head>
+    <body>
+        <!-- 타이틀 -->
+        <header id="title">
+            <svg width="100%" height="150px">
+                <defs>
+                    <linearGradient id="lgTitle" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:rgb(255, 133, 174);
+                        stop-opacity:0.7;" />
+                        <stop offset="100%" style="stop-color:rgb(114, 199, 255);
+                        stop-opacity:0.7;" />
+                    </linearGradient>
+                </defs>
+                <rect width="100%" height="100%" style="fill: url(#lgTitle)">
+                </rect>
+                <text alignment-baseline="central" fill="snow" style="font-size: 45px;
+                text-shadow: 2px 2px rgb(59, 59, 59); text-align: center;"
+                x="42%" y="45%">2020.01.08</text>
+            </svg>
+        </header>
+        <!-- 컨텐츠 -->
+        <main>
+            <section class="s01">
+                <h1 style="text-align: center; font-size: 33px;">- 회원가입 -</h1>
+                <fieldset>
+                    <legend>&nbsp;필수정보 입력&nbsp;</legend>
+                    <table>
+                        <form action="">
+                            <tr>
+                                <td class="t01">아이디</td>
+                                <td>
+                                    <input type="text" name="uid" required="required">
+                                    <input type="button" value="중복 확인" 
+                                    onclick="alert('사용 가능한 아이디입니다')">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="t01">비밀번호</td>
+                                <td>
+                                    <input type="password" name="pwd" id="pwd1">
+                                    &nbsp;* 영문/숫자를 조합하여 8자 이상 입력
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="t01">비밀번호 확인</td>
+                                <td>
+                                    <input type="password" name="pwd" id="pwd2">
+                                    &nbsp;* 비밀번호를 한번 더 입력해주세요.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="t01">성명</td>
+                                <td>
+                                    <input type="text" name="name" id="uName"
+                                    style="width: 100px;">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="t01">생년월일</td>
+                                <td><input type="date" name="bDay" id="uBd"
+                                    max="2019-12-31" min="1900-01-01"></td>
+                            </tr>
+                            <tr>
+                                <td class="t01">성별</td>
+                                <td>
+                                    <input type="radio" name="gender" value="남">남
+                                    <input type="radio" name="gender" value="여" checked>여
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="t01">휴대전화</td>
+                                <td><input type="radio" name="tc" value="kt">KT
+                                    <input type="radio" name="tc" value="skt" checked>SKT
+                                    <input type="radio" name="tc" value="lg" checked>LG U+ <br>
+                                    <select name="cn1" id="uCn">
+                                        <option value="0">선택</option>
+                                        <option value="1">010</option>
+                                        <option value="2">011</option>
+                                        <option value="3">016</option>
+                                        <option value="4">017</option>
+                                        <option value="5">018</option>
+                                        <option value="6">019</option>
+                                    </select> -
+                                    <input type="tel" name="cn2" id="uCn" pattern="[0-9]{3,4}"> -
+                                    <input type="tel" name="cn3" id="uCn" pattern="[0-9]{4}">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="t01">이메일</td>
+                                <td>
+                                    <input type="email" name="ma" id="uMail">&nbsp;* 예) abc123@xyz.com
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="t01">주소</td>
+                                <td>우편번호 <br>
+                                    <input type="text" name="uPost1" id="uPost" pattern="[0-9]{3}"                         
+                                        required="required" style="width: 70px; height: 25px;">
+                                        - <input type="text" name="post1" id="uPost" pattern="[0-9]{3}"                         
+                                        required="required" style="width: 70px; height: 25px;"><br>
+                                    상세주소 <br>
+                                    <input type="text" name="post2" placeholder="시/군/구"
+                                        required="required">
+                                    <input type="text" name="post3" required="required"
+                                        placeholder="읍/면/동 이하까지 입력">
+                                </td>
+                            </tr>
+                        </form>
+                    </table>
+                </fieldset>
+                
+            </section>
+            <section class="s02">
+                <fieldset>
+                    <legend>&nbsp;선택정보 입력&nbsp;</legend>
+                    <table>
+                        <tr>
+                            <td class="t01">관심사</td>
+                            <td>
+                                <input type="checkbox" name="f1" id="fav">&nbsp;리빙&nbsp;
+                                <input type="checkbox" name="f2" id="fav">&nbsp;푸드　　&nbsp;&nbsp;
+                                <input type="checkbox" name="f3" id="fav">&nbsp;스포츠/연예&nbsp;
+                                <input type="checkbox" name="f4" id="fav">&nbsp;패션/뷰티&nbsp;<br>
+                                <input type="checkbox" name="f5" id="fav">&nbsp;건강&nbsp;
+                                <input type="checkbox" name="f6" id="fav">&nbsp;게임/오락&nbsp;
+                                <input type="checkbox" name="f7" id="fav">&nbsp;뮤직　　　&nbsp;&nbsp;
+                                <input type="checkbox" name="f8" id="fav">&nbsp;영화&nbsp;<br>
+                                <input type="checkbox" name="f9" id="fav">&nbsp;책　&nbsp;
+                                <input type="checkbox" name="f10" id="fav">&nbsp;여행　　&nbsp;&nbsp;
+                                <input type="checkbox" name="f11" id="fav">&nbsp;정치/경제　&nbsp;
+                                <input type="checkbox" name="f12" id="fav">&nbsp;공연/전시&nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="t01">자기소개</td>
+                            <td><textarea name="intro" id="uInt" cols="50" rows="5">
+                            </textarea></td>
+                        </tr>
+                    </table>
+                </fieldset>
+            </section>
+            <section class="s03">
+                <fieldset style="padding: 10px 20% 10px 10px;">
+                    <legend>가입약관</legend>
+                    <p>&nbsp;<input type="checkbox" name="clause" id="uCl"> 이용 약관에 동의합니다. <br><br></p>
+                    <iframe src="clause_t.html" style="width: 500px; height: 150px;"></iframe>
+                </fieldset>
+            </section>
+            <section class="s04">
+                <table class="btn">
+                    <tr>
+                        <td><button type="reset" onclick="alert('작성내용 초기화 !')">초기화</button></td>
+                        <td><button onclick="alert('로그인 실행!')">회원가입 완료</button></td>
+                    </tr>
+                </table>
+            </section>
+        </main>
+        <!-- 저작권 -->
+        <footer>
+            <p style="font-size: 11px;">Copyright&copy; 2020 HG. All Rights Reserved.</p>
+        </footer>
+    </body>
+</html>

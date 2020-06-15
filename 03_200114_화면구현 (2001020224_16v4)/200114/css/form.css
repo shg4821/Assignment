@@ -1,0 +1,28 @@
+input {width: 150px;padding: 12px; border: 1px solid #B2B2B2; border-radius: 4px;}
+button { width: 100%; height: 40px; background-color: #EAEAEA; color: #ED1C24; 
+    font-size: 16px; border-radius: 4px; }
+button:hover { width: 100%; height: 40px; background-color: #131230; color: white;
+    padding: 1px; border: none; border-radius: 4px; cursor: pointer; }
+.logIn input { width: 100%; }
+input[type=checkbox] { width: auto; }
+
+/* 등록페이지 */
+.reMain button, .mem_main button { width: 100px; height: 40px; background-color: #EAEAEA; 
+    color: #ED1C24; font-size: 16px; }
+.reMain input, .mem_main input {width: 180px; height: 25px;}
+.reMain input[type=radio], #fav, #uCl, .mem_main input[type=radio]
+    {width: auto; height: auto;}
+.reMain #uCn {width: 70px; height: 25px;}
+.reMain input[type=button], .mem_main input[type=button] 
+    { background-color: #EAEAEA; color: #ED1C24; width: 75px;
+    height: 35px; padding: 1px; border: none; border-radius: 4px; cursor: pointer; }
+.reMain input[type=button]:hover, .mem_main input[type=button]:hover
+    { background-color: #131230; color: whitesmoke; padding: 1px; border: none; 
+    border-radius: 4px; cursor: pointer; }
+.reMain input[type=checkbox] { width: auto; }
+
+
+.finBtn { text-align: center; margin: auto; }
+.finBtn tr { width: 100%; text-align: center; }
+.finBtn td { width: auto; }
+.finBtn button { width: 200px; }

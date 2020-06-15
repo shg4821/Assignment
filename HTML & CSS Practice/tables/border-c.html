@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <style>
+            /*
+                class : 다수의 엘리먼트
+                id : 유일한 엘리먼트
+            */
+            table, tr, td { border: dotted thin midnightblue; }
+            #tblOne, #tblOne tr, #tblOne td { border: thin solid mediumspringgreen;
+            border-collapse: collapse; }
+            /* even : 홀수 / odd : 짝수 */
+            table tr:nth-child(even) {background-color: tomato;}
+            table tr:nth-child(odd) {background-color: mediumaquamarine;}
+            table tr:nth-child(1) {font-size: 20px;}
+            table tr:nth-child(3) {color: mintcream;}
+            </style>
+    </head>
+    <body>
+        <h1>한줄테이블 만들기</h1>
+        <table >
+            <caption>테이블 제목</caption>
+            <tr><th>00000000000</th><th>00000000000</th><th>00000000000</th></tr>
+            <tr><td>11111111111</td><td>11111111111</td><td>11111111111</td></tr>
+            <tr><td>11111111111</td><td>11111111111</td><td>11111111111</td></tr>
+            <tr><td>11111111111</td><td>11111111111</td><td>11111111111</td></tr>
+            <tr><td>11111111111</td><td>11111111111</td><td>11111111111</td></tr>
+            <tr><td>11111111111</td><td>11111111111</td><td>11111111111</td></tr>
+        </table>
+        
+        <h1>한줄테이블 만들기</h1>
+        <table id="tblOne">
+            <tr><td>11111111111</td></tr>
+        </table>
+    </body>
+</html>

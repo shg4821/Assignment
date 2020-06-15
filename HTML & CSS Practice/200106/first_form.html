@@ -1,0 +1,238 @@
+<html>
+    <head>
+        <title>first_form.html</title>
+        <!--반응형 세팅-->
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <style>
+        /*전체*/
+        *{box-sizing: border-box; font-size: 12px;}
+        ul{list-style: none; padding: 0;margin: 0;}
+        li{padding: 0; margin: 0;}
+        /* 폼태그 스타일 */
+        /* 입력컨트롤 */
+        input, select, textarea {width: 90%;padding: 12px;
+        border: 1px solid #ccc; border-radius: 4px;} /* 모서리 둥글게 */
+        /* 버튼 컨트롤 */
+        button {
+            background-color: mediumaquamarine; color: gray; padding: 12px 20px; 
+            border: none; border-radius: 4px; cursor: pointer; }
+        button:hover {background-color: gray; color: mediumspringgreen;}
+        #secMember button {
+            background-color: mediumaquamarine; color: gray; padding: 2px 5px; 
+            border: none; border-radius: 4px; cursor: pointer; width: 80px; height: 40px;}
+        #secMember button:hover {background-color: gray; color: mediumspringgreen;}
+        /*헤더*/
+        header{background-color: darkorange; text-align: center; padding: 30px;}
+        /*컨텐츠*/
+        article{float:left; width: 33.33%; padding: 10px;}
+        #secLogin article{ height: 250px;}
+        #secHtml5 article{ height: 1280px; border-top: gray thin dotted;}
+        #secMember article{height: 800px; border-bottom: gray thin dotted;}
+        input[type=radio]{float: left;}
+        /*float 마무리*/
+        section::after{content: ""; display: table; clear: both;}
+         /*저작권*/
+        footer{
+             background-color: slategray; padding: 15px; text-align: center;}
+        /*반응형 마무리*/
+        @media(max-width: 800px) {
+            #secMember article:first-child, #secHtml5 article:first-child 
+            ,#secLogin article:first-child { height:50px; }
+            #secMember article:nth-child(2), #secHtml5 article:nth-child(2) 
+            ,#secLogin article:nth-child(2) { height:350px; }
+            article { width: 100%; float: none; display: block; }
+        }
+        </style>
+    </head>
+    <body>
+        <header><h2>HTML 폼태그 정리</h2></header>
+        <section id="secMember">
+            <article style="background-color: burlywood;">
+                <h3>회원가입</h3>
+            </article>
+            <article style="background-color: khaki;">
+                <h5>항목들</h5>
+                    <p><b>아이디</b>사용자 아이디</p>
+                    <p><b>비밀번호</b>사용자 비밀번호</p>
+                    <p><b>이름</b>사용자 이름</p>
+                    <p><b>생년월일</b>사용자 생년월일</p>
+                    <p><b>이메일</b>사용자 이메일</p>
+                    <p><b>주소</b>사용자 주소</p>
+                    <p><b>자기소개</b>사용자 소개</p>
+            </article>
+            <article style="background-color: cornsilk;">
+                <h5 style="text-align: center;">회원가입</h5>
+                <form action="http://www.nate.com" >
+                <table>
+                <tr><td><b>아이디 : </b></td>
+                    <td><input type="text" name="txtUserid" placeholder="예>iu" 
+                    required="required" style="width: 70%;"/></td>
+                    <td><button onclick="alert('사용 가능한 아이디입니다')">중복 확인</button></td>
+                </tr>
+                <tr><td><b>비밀번호 : &nbsp;</b></td>
+                    <td>
+                        <input type="password" name="txtPwd" required="required"
+                        placeholder="영문/숫자를 조합하여 8자 이상 입력"/>
+                    </td>
+                </tr>
+                <tr><td><b>비밀번호확인 : &nbsp;</b></td>
+                    <td><input type="password" name="txtPwd"  placeholder="예>1234"
+                    required="required"/></td></tr>
+                <tr>
+                    <td><b>이름 : </b></td>
+                    <td><input type="text" name="uName" placeholder="예>홍길동"
+                        style="width: 50%;"></td>
+                </tr>
+                <tr>
+                    <td><b>생년월일 : &nbsp;</b></td>
+                    <td><input type="date" name="uBd" style="width: 50%;"></td>
+                </tr>
+                <tr>
+                    <td><b>이메일 : </b></td>
+                    <td><input type="email" name="uMail" placeholder="예>abc123@xyz.com"></td>
+                </tr>
+                <tr>
+                    <td><b>주소</b>
+                    <tr>
+                        <td>우편번호 : &nbsp;</td>
+                        <td><input type="text" name="uPost1" pattern="[0-9]{3}"                         
+                            required="required" style="width: 30%;">
+                            - <input type="text" name="uPost1" pattern="[0-9]{3}"                         
+                            required="required" style="width: 30%;"></td>
+                    <tr>
+                        <td>주소 : </td>
+                        <td><input type="text" name="uPost1" placeholder="시/군/구"
+                            required="required"></td>
+                    </tr>
+                    <tr>
+                        <td>상세주소 : &nbsp;</td>
+                        <td><input type="text" name="uPost1" required="required"
+                            placeholder="읍/면/동 이하까지 입력"></td>
+                    </tr>
+                    </tr>
+                    </td>
+                    </tr>
+                    <!-- ta -->
+                    <tr><td><b>자기소개 : &nbsp;</b></td>
+                        <td><textarea name="" id="" cols="" rows="5">
+                        </textarea></td></tr>
+                    <tr>
+                        <td><button style="position: center;">회원가입</button></td>
+                    </tr>
+                </table>
+                </p>
+                </form>
+            </article>
+        </section>
+        <section id="secLogin">
+            <article style="background-color: burlywood;">
+                <h3>기본로그인</h3>
+            </article>
+            <article style="background-color: khaki;">
+                <h5>사용태그</h5>
+                    <p><b>form</b> : 입력상자들(input)을 그룹화</p>
+                    <p><b>type</b> 입력상자들(input)을 그룹화</p>
+                    <p><b>button</b> 이벤트를 발생시키는 대표적인 엘리먼트</p>
+                    <p><b>form action</b> 이벤트를 발생시키는 대표적인 엘리먼트</p>
+            </article>
+            <article style="background-color: cornsilk;">
+                <h5>로그인</h5>
+                <form action="http://www.nate.com" >
+                <table>
+                <tr><td> 아이디 : </td>
+                    <td><input type="text" name="txtUserid" placeholder="예>iu" 
+                    required="required"/>
+                    <input type="checkbox" name="chkIsVip" value="vip" 
+                    checked="checked"/> VIP 여부</td></tr>
+                <tr><td>비밀번호 : </td>
+                    <td><input type="password" name="txtPwd"  placeholder="예>1234"
+                    required="required"/></td></tr>
+                    <!-- 버튼 -->
+                    <tr>
+                        <td>
+                        <td><button onclick="alert('로그인 실행 !')">로그인</button>
+                            <button type="reset" onclick="alert('초기화 실행 !')">
+                                초기화</button></td>
+                    </td>
+                    </tr>
+                </table>
+                </p>
+                </form>
+            </article>
+        </section>
+        <!-- seclogin -->
+        <section id="secHtml5">
+            <article style="background-color: burlywood;">
+                <h3>HTML5</h3>
+            </article>
+            <article style="background-color: khaki;">
+                <h5>사용태그</h5>
+                    타입 COLOR INPUT : 색상값 입력시 인풋<br>
+                    타입 DATE INPUT : 날짜 입력시 인풋
+                    (MAX : 최대 / MIN : 최소)<br>
+            </article>
+            <article style="background-color: cornsilk;">
+                <h5>로그인</h5>
+                <form action="http://www.nate.com" >
+                <fieldset>
+                    <legend>Types</legend>
+                <table>
+                <tr><td>타입 COLOR</td>
+                    <td><input type="color" name="fColor"></td>
+                        <input type="date" name="fDate"><br>
+                        2020 이전 : <input type="date" name="fDate" max="2019-12-31"><br>
+                        2020 이후 : <input type="date" name="fDate" min="2020-01-01">
+                    </td></tr>
+                    <tr><td>datetime-local</td><td>
+                        <input type="datetime-local" name="inDt"> <br>
+                        <!-- autocomplete : 자동완성
+                        > 전송 후 다시 페이지로 돌아왔을 때 입력값의 존재여부 결정 
+                        - autofocus : 엘리먼트의 초점이 웹페이지 실행시 자동 설정-->
+                        e-mail : <input type="email" name="inEmail" autocomplete="on"
+                        ><br>
+                        e-mail : <input type="email" name="inEmail" autocomplete="off"><br>
+                        file : <input type="file" name="inFile"><br>
+                        month : <input type="month" name="inMonth"><br>
+                        number : <input type="number" name="inNum"><br>
+                        search : <input type="search" name="inSearch">
+                        <button>검색</button><br>
+                        <!-- [] : 안의 값들 중 1자
+                        {숫자} : 숫자만큼의 자릿수 -->
+                        전화번호 : <input type="tel" name="inTel" 
+                        pattern="[0-9]{3}-[0-9]{3,4}-[0-9]{4}"                         
+                        required="required">
+                        <!-- pattern="[0-9]{3}-[0-9]{3,4}-[0-9]{4}" : 정규식 -->
+                        <button>전송</button><br>
+                        time : <input type="time" name="inTime"><br>
+                        url : <input type="url" name="inUrl"><br>
+                        week : <input type="week" name="inWeek"><br>
+                        datalist : 
+                        <input list="dtSearchEngine" name="inSearchEngine">
+                        <datalist name="dtSearchEngine" id="dtSearchEngine">
+                            <option value="구글"></option>
+                            <option value="네이버"></option>
+                            <option value="라이코스"></option>
+                        </datalist><br>
+                        select : 
+                        <select name="dtSearchEngine2" id="dtSearchEngine2">
+                            <option value="1">구글</option>
+                            <option value="2">네이버</option>
+                            <option value="3">라이코스</option>
+                        </select><br>
+                        step : 배수로 입력, 스텝이 3인 경우, 0 3 6 . . . 3의 배수만 가능
+                        <input list="number" name="inNum2" step="5">
+                        <button>전송</button>
+                    </td>
+                    </tr>
+                </td>
+                </table>
+                </fieldset>
+                </p>
+                </form>
+            </article>
+        </section>
+        <footer>
+            <p>&copy; All Rights Reserved. HG</p>
+        </footer>
+    </body>
+</html>
